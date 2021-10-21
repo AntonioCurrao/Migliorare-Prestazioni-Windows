@@ -141,7 +141,7 @@ $vscode.location                 = New-Object System.Drawing.Point(4,797)
 $vscode.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
 $Label2                          = New-Object system.Windows.perms.Label
-$Label2.text                     = "Utilità"
+$Label2.text                     = "Utilita`"
 $Label2.AutoSize                 = $true
 $Label2.width                    = 25
 $Label2.height                   = 10

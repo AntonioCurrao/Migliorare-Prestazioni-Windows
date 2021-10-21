@@ -1,5 +1,5 @@
-Add-Type -AssemblyName System.Windows.forms
-[System.Windows.forms.Application]::AbilitaVisualStyles()
+Add-Type -AssemblyName System.Windows.perms
+[System.Windows.perms.Application]::enableVisualStyles()
 
 $ErrorActionPreference = 'SilentlyContinue'
 $wshell = New-Object -ComObject Wscript.Shell
@@ -15,7 +15,7 @@ Write-Host "Checking winget..."
 
 # Check if winget is installed
 if (Test-Path ~\AppData\Local\Microsoft\WindowsApps\winget.exe){
-    'Winget è già installato'
+    'Winget e' gia' installato'
 }  
 else{
     # Sto installando winget from il Microsoft Store
@@ -25,12 +25,12 @@ else{
 	$nid = (Get-Process AppInstaller).Id
 	Wait-Process -Id $nid
 	Write-Host Winget Installed
-    $ResultText.text = "`r`n" +"`r`n" + "Ho installato Winget - Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" +"`r`n" + "Ho installato Winget - Sono pronto per il prossimo compito"
 }
 
-$form                            = New-Object system.Windows.forms.form
+$form                            = New-Object system.Windows.perms.perm
 $form.ClientSize                 = New-Object System.Drawing.Point(1050,1000)
-$form.text                       = "Programma for migliorare le prestazioni di Windows di Antonio Currao"
+$form.text                       = "Programma per migliorare le prestazioni di Windows di Antonio Currao"
 $form.StartPosition              = "CenterScreen"
 $form.TopMost                    = $false
 $form.BackColor                  = [System.Drawing.ColorTranslator]::FromHtml("#e9e9e9")
@@ -39,7 +39,7 @@ $form.AutoScaleMode           = "Dpi"
 $form.AutoSize                = $True
 $form.AutoScroll              = $True
 $form.ClientSize              = '1050, 1000'
-$form.formBorderStyle         = 'FixedSingle'
+$form.permBorderStyle         = 'FixedSingle'
 
 # GUI Icon
 $iconBase64                      = 'AAABAAMAMDAAAAEAIACoJQAANgAAACAgAAABACAAqBAAAN4lAAAQEAAAAQAgAGgEAACGNgAAKAAAADAAAABgAAAAAQAgAAAAAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEZGRgKxsbEBR0dHAq+vrwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8C////Dt3d3Sm/v785wMDAOsDAwDrAwMA6wMDAOsDAwDrBwcE7wMDAPa6urjzm5uYV////AQAAAAAAAAAAAAAAAAAAAAD///8C3NzcIFNTU3O+vr5NVFRUdLy8vCj///8DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////Af///wv///8R////BQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wL///8Xv7+/WYWFhaSPj4+vjo6OrY6Ojq2Ojo6tjo6OrY+Pj62Ojo6wh4eHqGxsbJfMzMwu////AwAAAAAAAAAAAAAAAP///wH///8O8PDwRnZ2dqnU1NRvdHR0ntLS0jn///8EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////BqmpqUF7e3tu////GP///wEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////Af///w67u7tXiIiIua2trcecnJzEnJycwJubm7+bm5u/m5ubv52dncCKiorItra2m/X19Vf39/cg////AwAAAAAAAAAAAAAAAP///wPU1NQuhISEnn9/f7jX19dodnZ2ltPT0zX///8DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////B6mpqVZ7e3uc////Mf///wgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wv///8J////CNjY2Dd8fHyonJycy5ycnM+mpqbSkJCQ2I6OjteOjo7Xjo6O2IuLi9KFhYXFgICAs2hoaKGvr68+////BQAAAAAAAAAAAAAAAP///wPc3Nw1hISEsISEhL/X19drd3d3l9PT0zX///8DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////B7W1tVGFhYW2jIyMhvX19R3///8BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJSUlGW8vLxZ7e3tQNHR0WtfX1/UlJSUz6GhocyJiYnci4uLzYaGhryGhoa7fX19wYGBganU1NRZxsbGRbS0tEXa2toe////AwAAAAAAAAAAAAAAAP///wXi4uI2jIyMrImJicbKysqUf39/ptXV1Tb///8DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////B7W1tVCHh4fDf39/pfz8/CT///8CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFpaWsdra2vQeXl5wYqKisBvb2/dmpqa0ZycnM5qamrcxcXFjfX19Vbj4+Ni6enpX+bm5kX///8a////C////wj///8E////AQAAAAAAAAAA////Au7u7hnAwMBokpKSuI+Pj9OEhITSeHh4u9vb2zj///8DAAAAAAAAAAAAAAAAAAAAAAAAAAD///8B////Cri4uFWJiYnBiIiInf///yH///8BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKqqqmOYmJiHhYWFpnt7e8BwcHDYampq34SEhNppaWnhkJCQs7GxsZF1dXWzhISEqp+fn4i3t7dm1tbWR/X19S7///8d////Ev///wj///8C////A9ra2jN0dHS0k5OTyZKSktSVlZXQf39/utnZ2Tj///8DAAAAAAAAAAAAAAAAAAAAAAAAAAD///8E29vbKqqqqoaOjo7HiIiInv///yP///8DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wv///8V/f39JPX19UKSkpKbDw8P+BQUFPhoaGjVd3d3yGxsbNJoaGjdbGxs4m5ubuBwcHDZdnZ2y4CAgLWRkZGalZWVgb+/v0X///8P////B+fn5zKJiYmvl5eXy5GRkdOVlZXOfn5+utnZ2Tj///8EAAAAAAAAAAAAAAAAAAAAAAAAAAD///8HrKysU3Nzc8uUlJTOkZGRreXl5Un5+fkQ////AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8B////Av///xGKiop+CwsL+goKCvyWlpaY7u7uT7y8vF+goKB/i4uLnnt7e7lxcXHNbW1t2mxsbOFubm7iZGRk4JKSkqrHx8dh5OTkQPDw8FGNjY20l5eXypGRkdOVlZXNgoKCvuLi4kj///8Q////Bv///wP///8BAAAAAAAAAAD///8GvLy8T4KCgsuWlpbQkJCQyHl5eaPl5eUp////AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////Af///w6IiIh8CwsL+goKCvyFhYWC////FP///wr///8S////H/Hx8TLR0dFLsbGxapaWloqCgoKoc3NzwGdnZ85iYmLOaWlpwn9/f7uDg4PPnZ2dzZOTk9WXl5fPhYWF0JSUlKOxsbFr0dHRR/Ly8i3///8b////D////wj///8Ju7u7T4GBgcqWlpbPlpaWy4mJiafv7+8s////AwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///w6IiIh8CwsL+goKCvyDg4OA////EP///wH///8B////Af///wP///8G////DP///xb+/v4l6OjoOsXFxVWlpaV0ioqKlHNzc7F5eXnHampq2m5ubuSJiYnZgoKC3319feKIiIjYiIiIyYuLi7OVlZWVqampc8bGxlPv7+89zc3NbIODg86WlpbPlpaWypCQkKv09PQ6////BgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///w6IiIh8CwsL+goKCvyDg4OA////EAAAAAAAAAAAAAAAAAAAAAAAAAAA////Af///wH///8C////BP///wj///8P////Gvr6+izn5+dbRUVF0wYGBv8yMjLth4eHyXl5ec54eHjae3t74IGBgeKEhIThhISE3IWFhdCDg4PCi4uLx4uLi9uWlpbQmZmZy3h4eMmMjIx9////FP///wEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///w6IiIh7CwsL+goKCvyFhYWD////EQAAAAAAAAAAAAAAAAAAAAD///8D////CP///wj///8F////AQAAAAAAAAAA////Af///wT///8sQUFBxQAAAP8xMTHf6OjoZtLS0k+wsLBrl5eXi4WFhal5eXnBdHR003Z2dt13d3fid3d35IqKiuGZmZnTnZ2dzXd3d9aPj4+f////NP///xX///8L////Bv///wP///8B////AQAAAAAAAAAAAAAAAP///wySkpJzDg4O+AcHB/55eXmV////Gf///wEAAAAAAAAAAP///wXj4+MopqamW56enmK4uLg7////CQAAAAAAAAAAAAAAAP///wL///8pQEBAxAEBAf8sLCzZ5ubmPv///wr///8M////Fv39/Sbl5eU7xMTEV6ampnaPj4+Wf39/s319fcxhYWHidnZ23Xx8fNuEhITPkJCQp5ubm4WxsbFmzs7OSO7u7jD///8e////EgAAAAAAAAAAAAAAAP///wm1tbVcGRkZ7QICAv9OTk7D////Ov///wj///8C////BP///x6QkJCEGRkZ7RQUFPNycnKF////Ef///wH///8B////Af///wP///8qQEBAxAEBAf8sLCzZ5eXlPP///wX///8C////Av///wP///8E////Cf///xD///8c/Pz8MczMzHElJSXnBwcH/k5OTt+RkZHBgoKCyoCAgNOAgIDSgoKCx4eHh7SLi4ucjY2NdwAAAAAAAAAAAAAAAP///wTz8/M4PT09ygEBAf8UFBTzj4+PlP///zr///8f////Lru7u3MwMDDeAQEB/xwcHOu0tLRh////Df///xD///8b////Hf///x////9BR0dHygAAAP8wMDDd7OzsUv///yH///8e////HP///xP///8J////FP///x3///8f////JN3d3V8mJibkAAAA/2NjY8b///9p4+PjasbGxoevr6+ilZWVs4WFhcB6enrOeHh4tgAAAAAAAAAAAAAAAP///wH///8Xk5OTgBQUFPMBAQH/FRUV809PT8NwcHCjXFxctyIiIugDAwP/CQkJ/GZmZqj///8q////EIyMjGBRUVGrVFRUrVRUVK5hYWG6LCws6wEBAf8fHx/yYGBgwFVVVa9UVFSuUFBQrXt7e3T///8tc3NzfVFRUa1UVFSuVlZWr15eXsMZGRn0AgIC/zU1NeViYmK6W1tbtGFhYbhnZ2e7ubm5eerq6kW8vLxUpqamVwAAAAAAAAAAAAAAAAAAAAD///8F/Pz8L3Nzc50VFRXyAgIC/wEBAf8EBAT/AgIC/wEBAf8NDQ35VVVVuOLi4kX///8L////FWFhYZgDAwP/AgIC/wICAv8BAQH/AgIC/wICAv8CAgL/AQEB/wICAv8CAgL/AQEB/0hISLX///9IPDw8wQAAAP8CAgL/AgIC/wEBAf8CAgL/AgIC/wEBAf8BAQH/AQEB/wEBAf8FBQX+dXV1hv///xT///8I////CAAAAAAAAAAAAAAAAAAAAAAAAAAA////CPn5+S6ampp6RkZGwCQkJOIaGhrsHx8f5js7O8uDg4OM6urqPP///w3///8C////EHV1dXwqKirYKysr2SsrK9krKyvZKysr2SsrK9krKyvZKysr2SsrK9krKyvZKCgo2mBgYJX///85VlZWoCgoKNorKyvZKysr2SsrK9krKyvZKysr2SsrK9krKyvZKysr2SsrK9ksLCzWhYWFbf///w3///8BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wT///8T9/f3K83NzUK0tLRMw8PDRu/v7zH///8X////Bv///wEAAAAA////Benp6R7f39814eHhOOHh4Tjh4eE44eHhOOHh4Tjh4eE44eHhOOHh4Tjh4eE439/fNuXl5ST///8Q5OTkJ9/f3zfh4eE44eHhOOHh4Tjh4eE44eHhOOHh4Tjh4eE44eHhOOHh4Tjf39806+vrG////wQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAPwA/1///wAA+AH+X/v/AADwAP5f+f8AAPAH/h/5/wAAAH/+H/n/AACAB/wf8f8AAPAAPB/x/wAA+OAcH/D/AAD4/gAP8P8AAPj/8ADw/wAA+P/+AAD/AAD4//44AH8AAPj//j/AHwAA+Ph+P/gBAAD4eP4/+MAAAPgA4AOADwAA/AHAAQAHAAD/A+ABAA8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD29vYJubm5JK6uri2vr68tr6+vLbCwsC2srKwvo6OjJv///wQAAAAAAAAAAAAAAACtra0Td3d3RHt7e0Senp4YAAAAAAAAAAAAAAAAAAAAAP///wHq6uoM7u7uBwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/v7+DKqqql+YmJiql5eXrZaWlqyWlpaslZWVr5WVlaWfn59j////CwAAAAAAAAAA////BbCwsE+RkZGVlJSUhbKysi8AAAAAAAAAAAAAAAAAAAAA////BoyMjFioqKg5////AQAAAAAAAAAAAAAAAAAAAAAAAAAA////Cf///waqqqpIj4+PvKOjo8+WlpbSkJCQ0pCQkNKOjo7Lj4+Pr5mZmWzp6ekPAAAAAAAAAAD///8NjIyMjJSUlKSZmZmAs7OzLAAAAAAAAAAAAAAAAAAAAAD///8GlZWVcJeXl4Hi4uITAAAAAAAAAAAAAAAAAAAAAAAAAAB9fX2DpKSkbY6Ojp2FhYXUlpaW0o+Pj8OcnJydlZWVoKCgoHbBwcE7qKioLu7u7gcAAAAAAAAAAPn5+Rebm5uRlZWVv5CQkKO7u7stAAAAAAAAAAAAAAAAAAAAAP///waZmZlzh4eHq9bW1h8AAAAAAAAAAAAAAAAAAAAAAAAAAIGBgYyBgYGqfHx8xnV1ddt4eHjdiIiIuKysrIiUlJSUr6+vasPDwz7n5+cj/v7+Ev///wX///8BoqKiTI6Ojr6SkpLUhISEvcPDwy4AAAAAAAAAAAAAAAAAAAAA3d3dG5qampCNjY2n3NzcHgAAAAAAAAAAAAAAAAAAAAAAAAAA////DPDw8BvGxsZRKysr3iwsLOqKioqre3t7tHFxcc5xcXHWdHR0z319fbuBgYGfs7OzUf///xasrKxckZGRyJSUlNGJiYm6xMTEMAAAAAAAAAAAAAAAAAAAAACqqqo/hoaGxpOTk7uwsLBQ////BQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM7OzioiIiLZIiIi3djY2Dzk5OQivr6+PqSkpF+Pj4+EgICAqHR0dMN3d3e8f39/n4qKiqqSkpLOlpaW0oyMjMmkpKR9v7+/P9/f3yL9/f0P////BbGxsT+Li4vHk5OTzpKSkoP///8LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAz8/PKyIiItkgICDcysrKLAAAAAAAAAAA////Av///wn39/cW09PTK66urkmUlJRsiYmJkWxsbMtUVFToe3t73X5+ft2GhobQi4uLuZSUlJekpKRxqqqqfo2Njc2VlZXNlpaWluDg4BoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADPz88qIiIi2SEhIdzLy8suAAAAAAAAAAD///8B////Bf///wb///8BAAAAAP///wT///8UVlZWngsLC/5/f3+foaGheYuLi5yCgoK7fn5+0Xx8fNt6enrfjIyM3JmZmc98fHzGvr6+Tf///xD///8G////AQAAAAAAAAAAAAAAAODg4CQoKCjQGxsb6ba2tkMAAAAAAAAAAOrq6hhqampzXV1df8LCwh8AAAAAAAAAAP///whPT0+WDAwM/XZ2dmr///8H/f39EN7e3iO6uro+o6OjYJSUlIV3d3fATk5O6HNzc9mLi4u4kJCQlpycnHWurq5Surq6NQAAAAAAAAAA////E0hISKkKCgr+ZGRkmvf39yr///8ihISEehQUFPMvLy/M3d3dJ////xD///8Z////IltbW6ENDQ39hoaGeP///xv///8Y////Df///w7///8c////JoGBgYoKCgr9cXFxury8vImjo6Ook5OTuoaGhr19fX2uAAAAAAAAAAD///8DmpqaVB8fH+QODg74NDQ0zTk5OcYTExPzFRUV8H5+fnD///8WVVVVhi4uLsY0NDTGJSUl5wYGBv4uLi7dMjIyxS8vL8R8fHxsc3Nzci8vL8QyMjLFLCws3gUFBf4pKSnkOjo6yTs7O9F1dXWY1dXVP6qqqkQAAAAAAAAAAAAAAAD///8Ojo6OYTY2NsMYGBjpFhYW7C4uLsx9fX1y/Pz8FP///xBISEicHBwc5R0dHeIdHR3gHx8f3x0dHeEdHR3iHh4e4nJycn1oaGiFHR0d4x0dHeIdHR3hHx8f3x0dHeAdHR3iHBwc5E5OTpD///8LAAAAAAAAAAAAAAAAAAAAAAAAAAD///8G39/fHqKiojacnJw41dXVIv///wgAAAAA////A8HBwR62trYtuLi4Lbi4uC24uLgtuLi4Lbi4uC22trYsz8/PGMzMzBq2trYtuLi4Lbi4uC24uLgtuLi4Lbi4uC22trYtw8PDHP///wIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////////////////////////////////////////////////A/P//gPj+/QP4/vwD+Pz/gDj8/54A/H+f8Ax/n/iAf5/5+B+OefwDwMAwD+HAIA/////////////////////////////////////////////////////8oAAAAEAAAACAAAAABACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC+vr4Gp6enHaWlpSCioqIhp6enDgAAAACgoKAJhoaGI5SUlAkAAAAAy8vLAa+vrwcAAAAAAAAAAAAAAADNzc0NoKCgXJqamrKUlJSylJSUn6SkpDcAAAAAnJycPZaWloWlpaUdAAAAALe3twqYmJhPubm5DAAAAAAAAAAAjIyMeICAgLqGhobNlZWVpZycnHCtra0q////BJqammyRkZGwoqKiIAAAAAC5ubkTlJSUg62trR0AAAAAAAAAANbW1hdJSUmRUFBQrJGRkW+Dg4OOgYGBlo+Pj2yRkZGlj4+Px5+fn0++vr4VqqqqMJGRkbOioqI+AAAAAAAAAAAAAAAANjY2gTU1NYQAAAAA19fXDq2trSWcnJw2a2triVhYWM+Ojo6ei4uLnYyMjKGOjo7OlJSUdtTU1A7v7+8EAAAAAEFBQW8yMjKtpaWlJ0NDQ31TU1Nc1NTUD0xMTGwyMjKyra2tLqKiojiUlJRmUlJSynR0dLuWlpaPlJSUcQAAAAB+fn4jMjIyrC0tLcQwMDCzfHx8Pj4+Po8pKSnIIiIi0zIyMq9hYWFzMTExryEhIdMuLi7NTk5Oo6ampjgAAAAAAAAAAJCQkBJcXFwqiIiIFN7e3gNra2sfY2NjJmdnZyVkZGQliIiIGWNjYyVnZ2clYmJiJmhoaB28vLwCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA//8AAP//AAD//wAAx38AAI93AACSdwAAngcAAN9xAADEIQAA//8AAP//AAD//wAA//8AAP//AAA='
@@ -51,96 +51,96 @@ $form.Icon                    = [System.Drawing.Icon]::FromHandle((New-Object Sy
 $form.Width                   = $objImage.Width
 $form.Height                  = $objImage.Height
 
-$Panel1                          = New-Object system.Windows.forms.Panel
+$Panel1                          = New-Object system.Windows.perms.Panel
 $Panel1.height                   = 939
 $Panel1.width                    = 219
 $Panel1.location                 = New-Object System.Drawing.Point(6,54)
 
-$brave                           = New-Object system.Windows.forms.Button
+$brave                           = New-Object system.Windows.perms.Button
 $brave.text                      = "Brave Browser"
 $brave.width                     = 212
 $brave.height                    = 30
 $brave.location                  = New-Object System.Drawing.Point(4,426)
 $brave.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$firefox                         = New-Object system.Windows.forms.Button
+$firefox                         = New-Object system.Windows.perms.Button
 $firefox.text                    = "Firefox"
 $firefox.width                   = 212
 $firefox.height                  = 30
 $firefox.location                = New-Object System.Drawing.Point(4,461)
 $firefox.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$7zip                            = New-Object system.Windows.forms.Button
+$7zip                            = New-Object system.Windows.perms.Button
 $7zip.text                       = "7-Zip"
 $7zip.width                      = 211
 $7zip.height                     = 30
 $7zip.location                   = New-Object System.Drawing.Point(4,102)
 $7zip.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$sharex                          = New-Object system.Windows.forms.Button
+$sharex                          = New-Object system.Windows.perms.Button
 $sharex.text                     = "ShareX (Screenshot)"
 $sharex.width                    = 212
 $sharex.height                   = 30
 $sharex.location                 = New-Object System.Drawing.Point(3,561)
 $sharex.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$adobereader                     = New-Object system.Windows.forms.Button
+$adobereader                     = New-Object system.Windows.perms.Button
 $adobereader.text                = "Adobe Reader DC"
 $adobereader.width               = 212
 $adobereader.height              = 30
 $adobereader.location            = New-Object System.Drawing.Point(3,865)
 $adobereader.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$notepad                         = New-Object system.Windows.forms.Button
+$notepad                         = New-Object system.Windows.perms.Button
 $notepad.text                    = "Notepad++"
 $notepad.width                   = 212
 $notepad.height                  = 30
 $notepad.location                = New-Object System.Drawing.Point(3,831)
 $notepad.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$gchrome                         = New-Object system.Windows.forms.Button
+$gchrome                         = New-Object system.Windows.perms.Button
 $gchrome.text                    = "Google Chrome"
 $gchrome.width                   = 212
 $gchrome.height                  = 30
 $gchrome.location                = New-Object System.Drawing.Point(3,494)
 $gchrome.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$mpc                             = New-Object system.Windows.forms.Button
+$mpc                             = New-Object system.Windows.perms.Button
 $mpc.text                        = "Media Player Classic"
 $mpc.width                       = 211
 $mpc.height                      = 30
 $mpc.location                    = New-Object System.Drawing.Point(3,697)
 $mpc.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$vlc                             = New-Object system.Windows.forms.Button
+$vlc                             = New-Object system.Windows.perms.Button
 $vlc.text                        = "VLC"
 $vlc.width                       = 212
 $vlc.height                      = 30
 $vlc.location                    = New-Object System.Drawing.Point(3,663)
 $vlc.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$powertoys                       = New-Object system.Windows.forms.Button
+$powertoys                       = New-Object system.Windows.perms.Button
 $powertoys.text                  = "PowerToys"
 $powertoys.width                 = 211
 $powertoys.height                = 30
 $powertoys.location              = New-Object System.Drawing.Point(4,67)
 $powertoys.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$winterminal                     = New-Object system.Windows.forms.Button
+$winterminal                     = New-Object system.Windows.perms.Button
 $winterminal.text                = "Terminale Windows"
 $winterminal.width               = 211
 $winterminal.height              = 30
 $winterminal.location            = New-Object System.Drawing.Point(3,32)
 $winterminal.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$vscode                          = New-Object system.Windows.forms.Button
+$vscode                          = New-Object system.Windows.perms.Button
 $vscode.text                     = "VS Code"
 $vscode.width                    = 211
 $vscode.height                   = 30
 $vscode.location                 = New-Object System.Drawing.Point(4,797)
 $vscode.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$Label2                          = New-Object system.Windows.forms.Label
+$Label2                          = New-Object system.Windows.perms.Label
 $Label2.text                     = "Utilità"
 $Label2.AutoSize                 = $true
 $Label2.width                    = 25
@@ -148,12 +148,12 @@ $Label2.height                   = 10
 $Label2.location                 = New-Object System.Drawing.Point(89,11)
 $Label2.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
-$Panel2                          = New-Object system.Windows.forms.Panel
+$Panel2                          = New-Object system.Windows.perms.Panel
 $Panel2.height                   = 938
 $Panel2.width                    = 211
 $Panel2.location                 = New-Object System.Drawing.Point(240,54)
 
-$Label3                          = New-Object system.Windows.forms.Label
+$Label3                          = New-Object system.Windows.perms.Label
 $Label3.text                     = "Tweak di sistema"
 $Label3.AutoSize                 = $true
 $Label3.width                    = 230
@@ -161,56 +161,56 @@ $Label3.height                   = 25
 $Label3.location                 = New-Object System.Drawing.Point(230,12)
 $Label3.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
 
-$essentialtweaks                 = New-Object system.Windows.forms.Button
+$essentialtweaks                 = New-Object system.Windows.perms.Button
 $essentialtweaks.text            = "Tweak essenziali"
 $essentialtweaks.width           = 205
 $essentialtweaks.height          = 75
 $essentialtweaks.location        = New-Object System.Drawing.Point(3,24)
 $essentialtweaks.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 
-$backgroundapps                  = New-Object system.Windows.forms.Button
-$backgroundapps.text             = "Disabilita app in background"
+$backgroundapps                  = New-Object system.Windows.perms.Button
+$backgroundapps.text             = "Disenable app in background"
 $backgroundapps.width            = 205
 $backgroundapps.height           = 30
 $backgroundapps.location         = New-Object System.Drawing.Point(3,453)
 $backgroundapps.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$cortana                         = New-Object system.Windows.forms.Button
-$cortana.text                    = "Disabilita ricerca Cortana"
+$cortana                         = New-Object system.Windows.perms.Button
+$cortana.text                    = "Disenable ricerca Cortana"
 $cortana.width                   = 205
 $cortana.height                  = 30
 $cortana.location                = New-Object System.Drawing.Point(2,588)
 $cortana.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$actioncenter                    = New-Object system.Windows.forms.Button
-$actioncenter.text               = "Disabilita centro notifiche"
+$actioncenter                    = New-Object system.Windows.perms.Button
+$actioncenter.text               = "Disenable centro notifiche"
 $actioncenter.width              = 205
 $actioncenter.height             = 30
 $actioncenter.location           = New-Object System.Drawing.Point(3,176)
 $actioncenter.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$scuramode                        = New-Object system.Windows.forms.Button
+$scuramode                        = New-Object system.Windows.perms.Button
 $scuramode.text                   = "Modalità scura"
 $scuramode.width                  = 205
 $scuramode.height                 = 30
 $scuramode.location               = New-Object System.Drawing.Point(4,315)
 $scuramode.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$forformancefx                   = New-Object system.Windows.forms.Button
-$forformancefx.text              = "forformance Visual FX"
-$forformancefx.width             = 205
-$forformancefx.height            = 30
-$forformancefx.location          = New-Object System.Drawing.Point(3,419)
-$forformancefx.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$forpermancefx                   = New-Object system.Windows.perms.Button
+$forpermancefx.text              = "perpermance Visual FX"
+$forpermancefx.width             = 205
+$forpermancefx.height            = 30
+$forpermancefx.location          = New-Object System.Drawing.Point(3,419)
+$forpermancefx.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$onedrive                        = New-Object system.Windows.forms.Button
-$onedrive.text                   = "Elimina e disabilita OneDrive"
+$onedrive                        = New-Object system.Windows.perms.Button
+$onedrive.text                   = "Elimina e disenable OneDrive"
 $onedrive.width                  = 205
 $onedrive.height                 = 30
 $onedrive.location               = New-Object System.Drawing.Point(3,521)
 $onedrive.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$Label15                         = New-Object system.Windows.forms.Label
+$Label15                         = New-Object system.Windows.perms.Label
 $Label15.text                    = "Windows Update"
 $Label15.AutoSize                = $true
 $Label15.width                   = 25
@@ -218,26 +218,26 @@ $Label15.height                  = 10
 $Label15.location                = New-Object System.Drawing.Point(732,11)
 $Label15.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
 
-$Panel4                          = New-Object system.Windows.forms.Panel
+$Panel4                          = New-Object system.Windows.perms.Panel
 $Panel4.height                   = 179
 $Panel4.width                    = 340
 $Panel4.location                 = New-Object System.Drawing.Point(699,55)
 
-$defaultwindowsupdate            = New-Object system.Windows.forms.Button
+$defaultwindowsupdate            = New-Object system.Windows.perms.Button
 $defaultwindowsupdate.text       = "Impostazioni predefinite"
 $defaultwindowsupdate.width      = 300
 $defaultwindowsupdate.height     = 30
 $defaultwindowsupdate.location   = New-Object System.Drawing.Point(24,26)
 $defaultwindowsupdate.Font       = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 
-$securitywindowsupdate           = New-Object system.Windows.forms.Button
+$securitywindowsupdate           = New-Object system.Windows.perms.Button
 $securitywindowsupdate.text      = "Solo aggiornamenti di sicurezza"
 $securitywindowsupdate.width     = 300
 $securitywindowsupdate.height    = 30
 $securitywindowsupdate.location  = New-Object System.Drawing.Point(24,142)
 $securitywindowsupdate.Font      = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 
-$Label16                         = New-Object system.Windows.forms.Label
+$Label16                         = New-Object system.Windows.perms.Label
 $Label16.text                    = "Consiglio di fare solo aggiornamenti di sicurezza."
 $Label16.AutoSize                = $true
 $Label16.width                   = 25
@@ -245,7 +245,7 @@ $Label16.height                  = 10
 $Label16.location                = New-Object System.Drawing.Point(62,65)
 $Label16.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$Label17                         = New-Object system.Windows.forms.Label
+$Label17                         = New-Object system.Windows.perms.Label
 $Label17.text                    = "- Rimanda aggiornamenti fino a 3 anni"
 $Label17.AutoSize                = $true
 $Label17.width                   = 25
@@ -253,15 +253,15 @@ $Label17.height                  = 10
 $Label17.location                = New-Object System.Drawing.Point(63,84)
 $Label17.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$Label18                         = New-Object system.Windows.forms.Label
-$Label18.text                    = "- Rimanda aggiornamenti sicurezza for 4 giorni"
+$Label18                         = New-Object system.Windows.perms.Label
+$Label18.text                    = "- Rimanda aggiornamenti sicurezza per 4 giorni"
 $Label18.AutoSize                = $true
 $Label18.width                   = 25
 $Label18.height                  = 10
 $Label18.location                = New-Object System.Drawing.Point(63,105)
 $Label18.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$Label19                         = New-Object system.Windows.forms.Label
+$Label19                         = New-Object system.Windows.perms.Label
 $Label19.text                    = "- Imposta tempo attivo massimo"
 $Label19.AutoSize                = $true
 $Label19.width                   = 25
@@ -269,20 +269,20 @@ $Label19.height                  = 10
 $Label19.location                = New-Object System.Drawing.Point(63,126)
 $Label19.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$PictureBox1                     = New-Object system.Windows.forms.PictureBox
+$PictureBox1                     = New-Object system.Windows.perms.PictureBox
 $PictureBox1.width               = 366
 $PictureBox1.height              = 130
 $PictureBox1.location            = New-Object System.Drawing.Point(554,420)
 $PictureBox1.imageLocation       = "https://github.com/ChrisTitusTech/win10script/blob/master/titus-toolbox.png?raw=true"
-$PictureBox1.SizeMode            = [System.Windows.forms.PictureBoxSizeMode]::zoom
-$chiaramode                       = New-Object system.Windows.forms.Button
+$PictureBox1.SizeMode            = [System.Windows.perms.PictureBoxSizeMode]::zoom
+$chiaramode                       = New-Object system.Windows.perms.Button
 $chiaramode.text                  = "Modalità chiara"
 $chiaramode.width                 = 205
 $chiaramode.height                = 30
 $chiaramode.location              = New-Object System.Drawing.Point(3,350)
 $chiaramode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$Label1                          = New-Object system.Windows.forms.Label
+$Label1                          = New-Object system.Windows.perms.Label
 $Label1.text                     = "Installa"
 $Label1.AutoSize                 = $true
 $Label1.width                    = 230
@@ -290,7 +290,7 @@ $Label1.height                   = 25
 $Label1.location                 = New-Object System.Drawing.Point(76,11)
 $Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
 
-$Label4                          = New-Object system.Windows.forms.Label
+$Label4                          = New-Object system.Windows.perms.Label
 $Label4.text                     = "Risoluzione problemi"
 $Label4.AutoSize                 = $true
 $Label4.width                    = 230
@@ -298,124 +298,124 @@ $Label4.height                   = 25
 $Label4.location                 = New-Object System.Drawing.Point(482,12)
 $Label4.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
 
-$Panel3                          = New-Object system.Windows.forms.Panel
+$Panel3                          = New-Object system.Windows.perms.Panel
 $Panel3.height                   = 179
 $Panel3.width                    = 220
 $Panel3.location                 = New-Object System.Drawing.Point(464,54)
 
-$essentialundo                   = New-Object system.Windows.forms.Button
+$essentialundo                   = New-Object system.Windows.perms.Button
 $essentialundo.text              = "Rimuovi tweak essenziali"
 $essentialundo.width             = 205
 $essentialundo.height            = 70
 $essentialundo.location          = New-Object System.Drawing.Point(3,102)
 $essentialundo.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
 
-$EActionCenter                   = New-Object system.Windows.forms.Button
-$EActionCenter.text              = "Abilita centro notifiche"
+$EActionCenter                   = New-Object system.Windows.perms.Button
+$EActionCenter.text              = "enable centro notifiche"
 $EActionCenter.width             = 205
 $EActionCenter.height            = 30
 $EActionCenter.location          = New-Object System.Drawing.Point(3,210)
 $EActionCenter.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$ECortana                        = New-Object system.Windows.forms.Button
-$ECortana.text                   = "Abilita la ricerca Cortana"
+$ECortana                        = New-Object system.Windows.perms.Button
+$ECortana.text                   = "enable la ricerca Cortana"
 $ECortana.width                  = 205
 $ECortana.height                 = 30
 $ECortana.location               = New-Object System.Drawing.Point(3,622)
 $ECortana.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$RBackgroundApps                 = New-Object system.Windows.forms.Button
-$RBackgroundApps.text            = "Abilita le app in background"
+$RBackgroundApps                 = New-Object system.Windows.perms.Button
+$RBackgroundApps.text            = "enable le app in background"
 $RBackgroundApps.width           = 205
 $RBackgroundApps.height          = 30
 $RBackgroundApps.location        = New-Object System.Drawing.Point(3,487)
 $RBackgroundApps.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$HTrayIcons                      = New-Object system.Windows.forms.Button
+$HTrayIcons                      = New-Object system.Windows.perms.Button
 $HTrayIcons.text                 = "Nascondi icone tray"
 $HTrayIcons.width                = 205
 $HTrayIcons.height               = 30
 $HTrayIcons.location             = New-Object System.Drawing.Point(3,278)
 $HTrayIcons.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$EClipboardHistory               = New-Object system.Windows.forms.Button
-$EClipboardHistory.text          = "Abilita la cronologia clipboard"
+$EClipboardHistory               = New-Object system.Windows.perms.Button
+$EClipboardHistory.text          = "enable la cronologia clipboard"
 $EClipboardHistory.width         = 205
 $EClipboardHistory.height        = 30
 $EClipboardHistory.location      = New-Object System.Drawing.Point(3,688)
 $EClipboardHistory.Font          = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$ELocation                       = New-Object system.Windows.forms.Button
-$ELocation.text                  = "Abilita tracciamento posizione"
+$ELocation                       = New-Object system.Windows.perms.Button
+$ELocation.text                  = "enable tracciamento posizione"
 $ELocation.width                 = 205
 $ELocation.height                = 30
 $ELocation.location              = New-Object System.Drawing.Point(2,655)
 $ELocation.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$InstallOneDrive                 = New-Object system.Windows.forms.Button
-$InstallOneDrive.text            = "Installa e abilita OneDrive"
+$InstallOneDrive                 = New-Object system.Windows.perms.Button
+$InstallOneDrive.text            = "Installa e enable OneDrive"
 $InstallOneDrive.width           = 205
 $InstallOneDrive.height          = 30
 $InstallOneDrive.location        = New-Object System.Drawing.Point(2,554)
 $InstallOneDrive.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$everythingsearch                = New-Object system.Windows.forms.Button
+$everythingsearch                = New-Object system.Windows.perms.Button
 $everythingsearch.text           = "Everything Search"
 $everythingsearch.width          = 211
 $everythingsearch.height         = 30
 $everythingsearch.location       = New-Object System.Drawing.Point(3,368)
 $everythingsearch.Font           = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$sumatrapdf                      = New-Object system.Windows.forms.Button
+$sumatrapdf                      = New-Object system.Windows.perms.Button
 $sumatrapdf.text                 = "Sumatra PDF"
 $sumatrapdf.width                = 212
 $sumatrapdf.height               = 30
 $sumatrapdf.location             = New-Object System.Drawing.Point(4,900)
 $sumatrapdf.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$vscodium                        = New-Object system.Windows.forms.Button
+$vscodium                        = New-Object system.Windows.perms.Button
 $vscodium.text                   = "VS Codium"
 $vscodium.width                  = 211
 $vscodium.height                 = 30
 $vscodium.location               = New-Object System.Drawing.Point(4,763)
 $vscodium.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$imageglass                      = New-Object system.Windows.forms.Button
+$imageglass                      = New-Object system.Windows.perms.Button
 $imageglass.text                 = "ImageGlass"
 $imageglass.width                = 212
 $imageglass.height               = 30
 $imageglass.location             = New-Object System.Drawing.Point(4,595)
 $imageglass.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$gimp                            = New-Object system.Windows.forms.Button
+$gimp                            = New-Object system.Windows.perms.Button
 $gimp.text                       = "GIMP"
 $gimp.width                      = 212
 $gimp.height                     = 30
 $gimp.location                   = New-Object System.Drawing.Point(4,629)
 $gimp.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$yourphonefix                    = New-Object system.Windows.forms.Button
+$yourphonefix                    = New-Object system.Windows.perms.Button
 $yourphonefix.text               = "Sistema le app del telefono"
 $yourphonefix.width              = 211
 $yourphonefix.height             = 30
 $yourphonefix.location           = New-Object System.Drawing.Point(4,25)
 $yourphonefix.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$removebloat                     = New-Object system.Windows.forms.Button
+$removebloat                     = New-Object system.Windows.perms.Button
 $removebloat.text                = "Rimuovi le app di MS Store"
 $removebloat.width               = 204
 $removebloat.height              = 34
 $removebloat.location            = New-Object System.Drawing.Point(3,898)
 $removebloat.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$reinstallbloat                  = New-Object system.Windows.forms.Button
+$reinstallbloat                  = New-Object system.Windows.perms.Button
 $reinstallbloat.text             = "Reinstalla le app di MS Store"
 $reinstallbloat.width            = 205
 $reinstallbloat.height           = 30
 $reinstallbloat.location         = New-Object System.Drawing.Point(3,813)
 $reinstallbloat.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$WarningLabel                    = New-Object system.Windows.forms.Label
+$WarningLabel                    = New-Object system.Windows.perms.Label
 $WarningLabel.text               = "Attenzione! Questo non farà funzionare le app di MS Store"
 $WarningLabel.AutoSize           = $true
 $WarningLabel.width              = 25
@@ -423,7 +423,7 @@ $WarningLabel.height             = 10
 $WarningLabel.location           = New-Object System.Drawing.Point(12,856)
 $WarningLabel.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',8)
 
-$Label5                          = New-Object system.Windows.forms.Label
+$Label5                          = New-Object system.Windows.perms.Label
 $Label5.text                     = "Giochi, applicazioni, ecc..."
 $Label5.AutoSize                 = $true
 $Label5.width                    = 25
@@ -431,7 +431,7 @@ $Label5.height                   = 10
 $Label5.location                 = New-Object System.Drawing.Point(44,877)
 $Label5.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',8)
 
-$Label6                          = New-Object system.Windows.forms.Label
+$Label6                          = New-Object system.Windows.perms.Label
 $Label6.text                     = "Varie riparazioni"
 $Label6.AutoSize                 = $true
 $Label6.width                    = 25
@@ -439,23 +439,23 @@ $Label6.height                   = 10
 $Label6.location                 = New-Object System.Drawing.Point(78,7)
 $Label6.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
-$Label7                          = New-Object system.Windows.forms.Label
-$Label7.text                     = "Strumenti for documenti"
+$Label7                          = New-Object system.Windows.perms.Label
+$Label7.text                     = "Strumenti per documenti"
 $Label7.AutoSize                 = $true
 $Label7.width                    = 25
 $Label7.height                   = 10
 $Label7.location                 = New-Object System.Drawing.Point(60,740)
 $Label7.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
-$Label8                          = New-Object system.Windows.forms.Label
-$Label8.text                     = "Strumenti for video e immagini"
+$Label8                          = New-Object system.Windows.perms.Label
+$Label8.text                     = "Strumenti per video e immagini"
 $Label8.AutoSize                 = $true
 $Label8.width                    = 25
 $Label8.height                   = 10
 $Label8.location                 = New-Object System.Drawing.Point(41,537)
 $Label8.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
-$Label9                          = New-Object system.Windows.forms.Label
+$Label9                          = New-Object system.Windows.perms.Label
 $Label9.text                     = "Browser"
 $Label9.AutoSize                 = $true
 $Label9.width                    = 25
@@ -463,84 +463,84 @@ $Label9.height                   = 10
 $Label9.location                 = New-Object System.Drawing.Point(67,406)
 $Label9.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 
-$advancedipscanner               = New-Object system.Windows.forms.Button
+$advancedipscanner               = New-Object system.Windows.perms.Button
 $advancedipscanner.text          = "IP Scanner avanzato"
 $advancedipscanner.width         = 211
 $advancedipscanner.height        = 30
 $advancedipscanner.location      = New-Object System.Drawing.Point(3,335)
 $advancedipscanner.Font          = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$putty                           = New-Object system.Windows.forms.Button
+$putty                           = New-Object system.Windows.perms.Button
 $putty.text                      = "PuTTY & WinSCP"
 $putty.width                     = 211
 $putty.height                    = 30
 $putty.location                  = New-Object System.Drawing.Point(3,302)
 $putty.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$etcher                          = New-Object system.Windows.forms.Button
+$etcher                          = New-Object system.Windows.perms.Button
 $etcher.text                     = "Creatore USB"
 $etcher.width                    = 211
 $etcher.height                   = 30
 $etcher.location                 = New-Object System.Drawing.Point(3,269)
 $etcher.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$translucenttb                   = New-Object system.Windows.forms.Button
+$translucenttb                   = New-Object system.Windows.perms.Button
 $translucenttb.text              = "Barra delle applicazioni trasparente"
 $translucenttb.width             = 211
 $translucenttb.height            = 30
 $translucenttb.location          = New-Object System.Drawing.Point(3,236)
 $translucenttb.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$githubdesktop                   = New-Object system.Windows.forms.Button
+$githubdesktop                   = New-Object system.Windows.perms.Button
 $githubdesktop.text              = "Github Desktop"
 $githubdesktop.width             = 211
 $githubdesktop.height            = 30
 $githubdesktop.location          = New-Object System.Drawing.Point(3,203)
 $githubdesktop.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$discord                         = New-Object system.Windows.forms.Button
+$discord                         = New-Object system.Windows.perms.Button
 $discord.text                    = "Discord"
 $discord.width                   = 211
 $discord.height                  = 30
 $discord.location                = New-Object System.Drawing.Point(4,170)
 $discord.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$autohotkey                      = New-Object system.Windows.forms.Button
+$autohotkey                      = New-Object system.Windows.perms.Button
 $autohotkey.text                 = "Scorciatoie automatiche"
 $autohotkey.width                = 211
 $autohotkey.height               = 30
 $autohotkey.location             = New-Object System.Drawing.Point(4,136)
 $autohotkey.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$appearancefx                    = New-Object system.Windows.forms.Button
+$appearancefx                    = New-Object system.Windows.perms.Button
 $appearancefx.text               = "Visuale FX"
 $appearancefx.width              = 205
 $appearancefx.height             = 30
 $appearancefx.location           = New-Object System.Drawing.Point(4,385)
 $appearancefx.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$STrayIcons                      = New-Object system.Windows.forms.Button
+$STrayIcons                      = New-Object system.Windows.perms.Button
 $STrayIcons.text                 = "Mostra le icone tray"
 $STrayIcons.width                = 205
 $STrayIcons.height               = 30
 $STrayIcons.location             = New-Object System.Drawing.Point(2,244)
 $STrayIcons.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$windowsupdatefix                = New-Object system.Windows.forms.Button
+$windowsupdatefix                = New-Object system.Windows.perms.Button
 $windowsupdatefix.text           = "Resetta Windows Update"
 $windowsupdatefix.width          = 211
 $windowsupdatefix.height         = 30
 $windowsupdatefix.location       = New-Object System.Drawing.Point(4,59)
 $windowsupdatefix.Font           = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$ResultText                      = New-Object system.Windows.forms.TextBox
+$ResultText                      = New-Object system.Windows.perms.TextBox
 $ResultText.multiline            = $true
 $ResultText.width                = 338
 $ResultText.height               = 126
 $ResultText.location             = New-Object System.Drawing.Point(565,284)
 $ResultText.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$Label10                         = New-Object system.Windows.forms.Label
+$Label10                         = New-Object system.Windows.perms.Label
 $Label10.text                    = "Stato:"
 $Label10.AutoSize                = $true
 $Label10.width                   = 25
@@ -548,44 +548,44 @@ $Label10.height                  = 10
 $Label10.location                = New-Object System.Drawing.Point(643,244)
 $Label10.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
 
-$EHibernation                    = New-Object system.Windows.forms.Button
-$EHibernation.text               = "Abilita ibernazione"
+$EHibernation                    = New-Object system.Windows.perms.Button
+$EHibernation.text               = "enable ibernazione"
 $EHibernation.width              = 205
 $EHibernation.height             = 30
 $EHibernation.location           = New-Object System.Drawing.Point(3,721)
 $EHibernation.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$dualboottime                    = New-Object system.Windows.forms.Button
+$dualboottime                    = New-Object system.Windows.perms.Button
 $dualboottime.text               = "Imposta l'orario su UTC (Doppio Avvio)"
 $dualboottime.width              = 205
 $dualboottime.height             = 30
 $dualboottime.location           = New-Object System.Drawing.Point(3,754)
 $dualboottime.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$Label11                         = New-Object system.Windows.forms.Label
-$Label11.text                    = "Video for sistemare Windows"
+$Label11                         = New-Object system.Windows.perms.Label
+$Label11.text                    = "Video per sistemare Windows"
 $Label11.AutoSize                = $true
 $Label11.width                   = 25
 $Label11.height                  = 10
 $Label11.location                = New-Object System.Drawing.Point(652,565)
 $Label11.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$urlfixwinstartup                = New-Object system.Windows.forms.Button
+$urlfixwinstartup                = New-Object system.Windows.perms.Button
 $urlfixwinstartup.text           = "Ripara l'avvio di Windows"
 $urlfixwinstartup.width          = 232
 $urlfixwinstartup.height         = 30
 $urlfixwinstartup.location       = New-Object System.Drawing.Point(615,594)
 $urlfixwinstartup.Font           = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$urlremovevirus                  = New-Object system.Windows.forms.Button
+$urlremovevirus                  = New-Object system.Windows.perms.Button
 $urlremovevirus.text             = "Pulisci da virus"
 $urlremovevirus.width            = 232
 $urlremovevirus.height           = 30
 $urlremovevirus.location         = New-Object System.Drawing.Point(615,632)
 $urlremovevirus.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$urlcreateiso                    = New-Object system.Windows.forms.Button
-$urlcreateiso.text               = "Crea ISO forsonalizzata"
+$urlcreateiso                    = New-Object system.Windows.perms.Button
+$urlcreateiso.text               = "Crea ISO personalizzata"
 $urlcreateiso.width              = 232
 $urlcreateiso.height             = 30
 $urlcreateiso.location           = New-Object System.Drawing.Point(615,672)
@@ -593,7 +593,7 @@ $urlcreateiso.Font               = New-Object System.Drawing.Font('Microsoft San
 
 $form.controls.AddRange(@($Panel1,$Panel2,$Label3,$Label15,$Panel4,$PictureBox1,$Label1,$Label4,$Panel3,$ResultText,$Label10,$Label11,$urlfixwinstartup,$urlremovevirus,$urlcreateiso))
 $Panel1.controls.AddRange(@($brave,$firefox,$7zip,$sharex,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2,$everythingsearch,$sumatrapdf,$vscodium,$imageglass,$gimp,$Label7,$Label8,$Label9,$advancedipscanner,$putty,$etcher,$translucenttb,$githubdesktop,$discord,$autohotkey))
-$Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$actioncenter,$scuramode,$forformancefx,$onedrive,$chiaramode,$essentialundo,$EActionCenter,$ECortana,$RBackgroundApps,$HTrayIcons,$EClipboardHistory,$ELocation,$InstallOneDrive,$removebloat,$reinstallbloat,$WarningLabel,$Label5,$appearancefx,$STrayIcons,$EHibernation,$dualboottime))
+$Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$actioncenter,$scuramode,$forpermancefx,$onedrive,$chiaramode,$essentialundo,$EActionCenter,$ECortana,$RBackgroundApps,$HTrayIcons,$EClipboardHistory,$ELocation,$InstallOneDrive,$removebloat,$reinstallbloat,$WarningLabel,$Label5,$appearancefx,$STrayIcons,$EHibernation,$dualboottime))
 $Panel4.controls.AddRange(@($defaultwindowsupdate,$securitywindowsupdate,$Label16,$Label17,$Label18,$Label19))
 $Panel3.controls.AddRange(@($yourphonefix,$Label6,$windowsupdatefix))
 
@@ -602,7 +602,7 @@ $brave.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Brave... Aspetta qualche secondo" 
     winget install -e BraveSoftware.BraveBrowser | Out-Host
     if($?) { Write-Host "Installed Brave Browser" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Brave" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Brave" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $firefox.Add_Click({
@@ -610,7 +610,7 @@ $firefox.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Firefox... Aspetta qualche secondo" 
     winget install -e Mozilla.Firefox | Out-Host
     if($?) { Write-Host "Installed Firefox" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Firefox" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Firefox" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $gchrome.Add_Click({
@@ -618,7 +618,7 @@ $gchrome.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Google Chrome... Aspetta qualche secondo" 
     winget install -e Google.Chrome | Out-Host
     if($?) { Write-Host "Installed Google Chrome" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Google Chrome" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Google Chrome" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $autohotkey.Add_Click({
@@ -626,21 +626,21 @@ $autohotkey.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando AutoHotkey... Aspetta qualche secondo" 
     winget install -e Lexikos.AutoHotkey | Out-Host
     if($?) { Write-Host "Installed AutoHotkey" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Autohotkey" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Autohotkey" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 $imageglass.Add_Click({
     Write-Host "Sto installando Image Glass (Image Viewer)"
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Image Glass... Aspetta qualche secondo" 
     winget install -e DuongDieuPhap.ImageGlass | Out-Host
     if($?) { Write-Host "Installed Image Glass (Image Viewer)" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Image Glass" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Image Glass" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 $discord.Add_Click({
     Write-Host "Sto installando Discord"
     $ResultText.text = "`r`n" +"`r`n" + "Discord... Aspetta qualche secondo" 
     winget install -e Discord.Discord | Out-Host
     if($?) { Write-Host "Installed Discord" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Discord" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Discord" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $adobereader.Add_Click({
@@ -648,7 +648,7 @@ $adobereader.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Adobe Reader DC... Aspetta qualche secondo" 
     winget install -e Adobe.AdobeAcrobatReaderDC | Out-Host
     if($?) { Write-Host "Installed Adobe Reader DC" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Adobe Reader DC" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Adobe Reader DC" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $notepad.Add_Click({
@@ -656,7 +656,7 @@ $notepad.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Notepad++... Aspetta qualche secondo" 
     winget install -e Notepad++.Notepad++ | Out-Host
     if($?) { Write-Host "Installed Notepad++" }
-    $ResultText.text = "`r`n" + "Ho finito di installare NotePad++" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare NotePad++" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $vlc.Add_Click({
@@ -664,7 +664,7 @@ $vlc.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "VLC Media Player... Aspetta qualche secondo" 
     winget install -e VideoLAN.VLC | Out-Host
     if($?) { Write-Host "Installed VLC Media Player" }
-    $ResultText.text = "`r`n" + "Ho finito di installare NotePad++" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare NotePad++" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $mpc.Add_Click({
@@ -672,7 +672,7 @@ $mpc.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Media Player Classic... Aspetta qualche secondo" 
     winget install -e clsid2.mpc-hc | Out-Host
     if($?) { Write-Host "Installed Media Player Classic" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Media Player Classic" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Media Player Classic" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $7zip.Add_Click({
@@ -680,7 +680,7 @@ $7zip.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando 7-Zip Compression Tool... Aspetta qualche secondo" 
     winget install -e 7zip.7zip | Out-Host
     if($?) { Write-Host "Installed 7-Zip Compression Tool" }
-    $ResultText.text = "`r`n" + "Ho finito di installare 7-Zip Compression Tool" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare 7-Zip Compression Tool" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $vscode.Add_Click({
@@ -688,7 +688,7 @@ $vscode.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Visual Studio Code... Aspetta qualche secondo" 
     winget install -e Microsoft.VisualStudioCode --source winget | Out-Host
     if($?) { Write-Host "Installed Visual Studio Code" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Visual Studio Code" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Visual Studio Code" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $vscodium.Add_Click({
@@ -696,7 +696,7 @@ $vscodium.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando VS Codium... Aspetta qualche secondo" 
     winget install -e VSCodium.VSCodium | Out-Host
     if($?) { Write-Host "Installed VS Codium" }
-    $ResultText.text = "`r`n" + "Ho finito di installare VS Codium" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare VS Codium" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $urlremovevirus.Add_Click({
@@ -716,7 +716,7 @@ $winterminal.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando New Terminale Windows... Aspetta qualche secondo" 
     winget install -e Microsoft.WindowsTerminal | Out-Host
     if($?) { Write-Host "Installed New Terminale Windows" }
-    $ResultText.text = "`r`n" + "Ho finito di installare New Terminale Windows" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare New Terminale Windows" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $powertoys.Add_Click({
@@ -724,7 +724,7 @@ $powertoys.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Microsoft PowerToys... Aspetta qualche secondo" 
     winget install -e Microsoft.PowerToys | Out-Host
     if($?) { Write-Host "Installed Microsoft PowerToys" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Microsoft PowerToys" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Microsoft PowerToys" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $everythingsearch.Add_Click({
@@ -732,7 +732,7 @@ $everythingsearch.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Voidtools Everything Search... Aspetta qualche secondo" 
     winget install -e voidtools.Everything --source winget | Out-Host
     if($?) { Write-Host "Installed Everything Search" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Voidtools Everything Search" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Voidtools Everything Search" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $sumatrapdf.Add_Click({
@@ -740,7 +740,7 @@ $sumatrapdf.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Sumatra PDF... Aspetta qualche secondo" 
     winget install -e SumatraPDF.SumatraPDF | Out-Host
     if($?) { Write-Host "Installed Sumatra PDF" }
-    $ResultText.text = "`r`n" + "Ho finito di installare Sumatra PDF" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Sumatra PDF" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $githubdesktop.Add_Click({
@@ -748,7 +748,7 @@ $githubdesktop.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando GitHub Desktop... Aspetta qualche secondo" 
     winget install -e GitHub.GitHubDesktop | Out-Host
     Write-Host "Installed Github Desktop"
-    $ResultText.text = "`r`n" + "Ho finito di installare GitHub Desktop" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare GitHub Desktop" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $translucenttb.Add_Click({
@@ -756,7 +756,7 @@ $translucenttb.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Translucent Taskbar... Aspetta qualche secondo" 
     winget install -e TranslucentTB.TranslucentTB | Out-Host
     Write-Host "Installed Translucent Taskbar"
-    $ResultText.text = "`r`n" + "Ho finito di installare Translucent Taskbar" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Translucent Taskbar" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $etcher.Add_Click({
@@ -764,7 +764,7 @@ $etcher.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Etcher USB Imager... Aspetta qualche secondo" 
     winget install -e Balena.Etcher | Out-Host
     Write-Host "Installed Etcher USB Imager"
-    $ResultText.text = "`r`n" + "Ho finito di installare Etcher USB Imager" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Etcher USB Imager" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $putty.Add_Click({
@@ -773,7 +773,7 @@ $putty.Add_Click({
     winget install -e PuTTY.PuTTY | Out-Host
     winget install -e WinSCP.WinSCP | Out-Host
     Write-Host "Installed PuTTY & WinSCP"
-    $ResultText.text = "`r`n" + "Ho finito di installare PuTTY & WinSCP" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare PuTTY & WinSCP" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $advancedipscanner.Add_Click({
@@ -781,7 +781,7 @@ $advancedipscanner.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Advanced IP Scanner... Aspetta qualche secondo" 
     winget install -e Famatech.AdvancedIPScanner | Out-Host
     Write-Host "Installed Advanced IP Scanner"
-    $ResultText.text = "`r`n" + "Ho finito di installare Advanced IP Scanner" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Advanced IP Scanner" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $sharex.Add_Click({
@@ -789,7 +789,7 @@ $sharex.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando ShareX Screenshot Tool... Aspetta qualche secondo" 
     winget install -e ShareX.ShareX | Out-Host
     Write-Host "Installed ShareX Screenshot Tool"
-    $ResultText.text = "`r`n" + "Ho finito di installare ShareX Screenshot Tool" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare ShareX Screenshot Tool" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $gimp.Add_Click({
@@ -797,13 +797,13 @@ $gimp.Add_Click({
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Gimp Image Editor... Aspetta qualche secondo" 
     winget install -e GIMP.GIMP | Out-Host
     Write-Host "Installed Gimp Image Editor"
-    $ResultText.text = "`r`n" + "Ho finito di installare Gimp Image Editor" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Ho finito di installare Gimp Image Editor" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $essentialtweaks.Add_Click({
     Write-Host "Sto creando Restore Point incase something bad happens"
     $ResultText.text = "`r`n" +"`r`n" + "Sto installando Essential Tools... Aspetta qualche secondo" 
-    Abilita-ComputerRestore -Drive "C:\"
+    enable-ComputerRestore -Drive "C:\"
     Checkpoint-Computer -Description "RestorePoint1" -RestorePointType "MODIFY_"
 
     Write-Host "Running O&O Shutup with Recommended "
@@ -813,166 +813,166 @@ $essentialtweaks.Add_Click({
     Start-BitsTransfer -Source "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" -Destination OOSU10.exe
     ./OOSU10.exe ooshutup10.cfg /quiet
 
-    Write-Host "Sto disabilitando Telemetry..."
-    $ResultText.text += "`r`n" +"Sto disabilitando Telemetry..."
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
-    Disabilita-ScheduledTask -TaskName "Microsoft\Windows\Application Exforience\Microsoft Compatibility Appraiser" | Out-Null
-    Disabilita-ScheduledTask -TaskName "Microsoft\Windows\Application Exforience\ProgramDataUpdater" | Out-Null
-    Disabilita-ScheduledTask -TaskName "Microsoft\Windows\Autochk\Proxy" | Out-Null
-    Disabilita-ScheduledTask -TaskName "Microsoft\Windows\Customer Exforience Improvement Program\Consolidator" | Out-Null
-    Disabilita-ScheduledTask -TaskName "Microsoft\Windows\Customer Exforience Improvement Program\UsbCeip" | Out-Null
-    Disabilita-ScheduledTask -TaskName "Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector" | Out-Null
-    Write-Host "Sto disabilitando Wi-Fi Sense..."
+    Write-Host "Sto disenablendo Telemetry..."
+    $ResultText.text += "`r`n" +"Sto disenablendo Telemetry..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
+    Disenable-ScheduledTask -TaskName "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" | Out-Null
+    Disenable-ScheduledTask -TaskName "Microsoft\Windows\Application Experience\ProgramDataUpdater" | Out-Null
+    Disenable-ScheduledTask -TaskName "Microsoft\Windows\Autochk\Proxy" | Out-Null
+    Disenable-ScheduledTask -TaskName "Microsoft\Windows\Customer Experience Improvement Program\Consolidator" | Out-Null
+    Disenable-ScheduledTask -TaskName "Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" | Out-Null
+    Disenable-ScheduledTask -TaskName "Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector" | Out-Null
+    Write-Host "Sto disenablendo Wi-Fi Sense..."
     If (!(Test-Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting")) {
-        New-Item -Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting" -force | Out-Null
+        New-Item -Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting" -Name "Value" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots" -Name "Value" -Type DWord -Value 0
-    Write-Host "Sto disabilitando Application suggestions..."
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "ContentDeliveryAllowed" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "OemPreInstalledAppsAbilitata" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsAbilitata" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsEverAbilitata" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SilentInstalledAppsAbilitata" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338387Abilitata" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338388Abilitata" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338389Abilitata" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-353698Abilitata" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SystemPaneSuggestionsAbilitata" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting" -Name "Value" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots" -Name "Value" -Type DWord -Value 0
+    Write-Host "Sto disenablendo Application suggestions..."
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "ContentDeliveryAllowed" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "OemPreInstalledAppsenableta" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsenableta" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsEverenableta" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SilentInstalledAppsenableta" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338387enableta" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338388enableta" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338389enableta" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-353698enableta" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SystemPaneSuggestionsenableta" -Type DWord -Value 0
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent")) {
-        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -force | Out-Null
+        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisabilitaWindowsConsumerFeatures" -Type DWord -Value 1
-    Write-Host "Sto disabilitando Activity History..."
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "AbilitaActivityFeed" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "PublishUserActivities" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "UploadUserActivities" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisenableWindowsConsumerFeatures" -Type DWord -Value 1
+    Write-Host "Sto disenablendo Activity History..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "enableActivityFeed" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "PublishUserActivities" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "UploadUserActivities" -Type DWord -Value 0
     # Keep Location Tracking commented out if you want il ability to locate your device
-    Write-Host "Sto disabilitando Location Tracking..."
+    Write-Host "Sto disenablendo Location Tracking..."
     If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location")) {
-        New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -force | Out-Null
+        New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -Name "Value" -Type String -Value "Deny"
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" -Name "SensorformissionState" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\lfsvc\Service\Configuration" -Name "Status" -Type DWord -Value 0
-    Write-Host "Sto disabilitando automatic Maps updates..."
-    Set-ItemProforty -Path "HKLM:\SYSTEM\Maps" -Name "AutoUpdateAbilitata" -Type DWord -Value 0
-    Write-Host "Sto disabilitando Feedback..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -Name "Value" -Type String -Value "Deny"
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" -Name "SensorpermissionState" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\lfsvc\Service\Configuration" -Name "Status" -Type DWord -Value 0
+    Write-Host "Sto disenablendo automatic Maps updates..."
+    Set-ItemProperty -Path "HKLM:\SYSTEM\Maps" -Name "AutoUpdateenableta" -Type DWord -Value 0
+    Write-Host "Sto disenablendo Feedback..."
     If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules")) {
-        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -force | Out-Null
+        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Name "NumberOfSIUFInforiod" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "DoNotShowFeedbackNotifications" -Type DWord -Value 1
-    Disabilita-ScheduledTask -TaskName "Microsoft\Windows\Feedback\Siuf\DmClient" -ErrorAction SilentlyContinue | Out-Null
-    Disabilita-ScheduledTask -TaskName "Microsoft\Windows\Feedback\Siuf\DmClientOnScenarioDownload" -ErrorAction SilentlyContinue | Out-Null
-    Write-Host "Sto disabilitando Tailored Exforiences..."
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Name "NumberOfSIUFInperiod" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "DoNotShowFeedbackNotifications" -Type DWord -Value 1
+    Disenable-ScheduledTask -TaskName "Microsoft\Windows\Feedback\Siuf\DmClient" -ErrorAction SilentlyContinue | Out-Null
+    Disenable-ScheduledTask -TaskName "Microsoft\Windows\Feedback\Siuf\DmClientOnScenarioDownload" -ErrorAction SilentlyContinue | Out-Null
+    Write-Host "Sto disenablendo Tailored Experiences..."
     If (!(Test-Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent")) {
-        New-Item -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -force | Out-Null
+        New-Item -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisabilitaTailoredExforiencesWithDiagnosticData" -Type DWord -Value 1
-    Write-Host "Sto disabilitando Advertising ID..."
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisenableTailoredExperiencesWithDiagnosticData" -Type DWord -Value 1
+    Write-Host "Sto disenablendo Advertising ID..."
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo")) {
         New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" -Name "DisabilitataByGroupPolicy" -Type DWord -Value 1
-    Write-Host "Sto disabilitando Error reporting..."
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting" -Name "Disabilitata" -Type DWord -Value 1
-    Disabilita-ScheduledTask -TaskName "Microsoft\Windows\Windows Error Reporting\QueueReporting" | Out-Null
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" -Name "DisenabletaByGroupPolicy" -Type DWord -Value 1
+    Write-Host "Sto disenablendo Error reporting..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting" -Name "Disenableta" -Type DWord -Value 1
+    Disenable-ScheduledTask -TaskName "Microsoft\Windows\Windows Error Reporting\QueueReporting" | Out-Null
     Write-Host "Restricting Windows Update P2P only to local network..."
     If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config")) {
         New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode" -Type DWord -Value 1
-    Write-Host "Stopping and Sto disabilitando Diagnostics Tracking Service..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode" -Type DWord -Value 1
+    Write-Host "Stopping and Sto disenablendo Diagnostics Tracking Service..."
     Stop-Service "DiagTrack" -WarningAction SilentlyContinue
-    Set-Service "DiagTrack" -StartupType Disabilitata
-    Write-Host "Stopping and Sto disabilitando WAP Push Service..."
+    Set-Service "DiagTrack" -StartupType Disenableta
+    Write-Host "Stopping and Sto disenablendo WAP Push Service..."
     Stop-Service "dmwappushservice" -WarningAction SilentlyContinue
-    Set-Service "dmwappushservice" -StartupType Disabilitata
-    Write-Host "Sto abilitando F8 boot menu options..."
+    Set-Service "dmwappushservice" -StartupType Disenableta
+    Write-Host "Sto enablendo F8 boot menu options..."
     bcdedit /set `{current`} bootmenupolicy Legacy | Out-Null
-    Write-Host "Stopping and Sto disabilitando Home Groups services..."
+    Write-Host "Stopping and Sto disenablendo Home Groups services..."
     Stop-Service "HomeGroupListener" -WarningAction SilentlyContinue
-    Set-Service "HomeGroupListener" -StartupType Disabilitata
+    Set-Service "HomeGroupListener" -StartupType Disenableta
     Stop-Service "HomeGroupProvider" -WarningAction SilentlyContinue
-    Set-Service "HomeGroupProvider" -StartupType Disabilitata
-    Write-Host "Sto disabilitando Remote Assistance..."
-    Set-ItemProforty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Remote Assistance" -Name "fAllowToGeillp" -Type DWord -Value 0
-    Write-Host "Sto disabilitando Storage Sense..."
+    Set-Service "HomeGroupProvider" -StartupType Disenableta
+    Write-Host "Sto disenablendo Remote Assistance..."
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Remote Assistance" -Name "fAllowToGeillp" -Type DWord -Value 0
+    Write-Host "Sto disenablendo Storage Sense..."
     Remove-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" -Recurse -ErrorAction SilentlyContinue
-    Write-Host "Stopping and Sto disabilitando Suforfetch service..."
+    Write-Host "Stopping and Sto disenablendo Superfetch service..."
     Stop-Service "SysMain" -WarningAction SilentlyContinue
-    Set-Service "SysMain" -StartupType Disabilitata
-    Write-Host "Sto disabilitando Hibernation..."
-    Set-ItemProforty -Path "HKLM:\System\CurrentControlSet\Control\Session Manager\Power" -Name "HibernteAbilitata" -Type Dword -Value 0
+    Set-Service "SysMain" -StartupType Disenableta
+    Write-Host "Sto disenablendo Hibernation..."
+    Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Session Manager\Power" -Name "Hibernteenableta" -Type Dword -Value 0
     If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenu")) {
         New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenu" | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenu" -Name "ShowHibernateOption" -Type Dword -Value 0
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenu" -Name "ShowHibernateOption" -Type Dword -Value 0
     Write-Host "Sto mostrando task manager details..."
     $taskmgr = Start-Process -WindowStyle Hidden -FilePath taskmgr.exe -PassThru
     Do {
         Start-Sleep -Milliseconds 100
-        $preferences = Get-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -ErrorAction SilentlyContinue
+        $preferences = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -ErrorAction SilentlyContinue
     } Until ($preferences)
     Stop-Process $taskmgr
     $preferences.Preferences[28] = 0
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -Type Binary -Value $preferences.Preferences
-    Write-Host "Sto mostrando file oforations details..."
-    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OforationStatusManager")) {
-        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OforationStatusManager" | Out-Null
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -Type Binary -Value $preferences.Preferences
+    Write-Host "Sto mostrando file operations details..."
+    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager")) {
+        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" | Out-Null
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OforationStatusManager" -Name "EnthusiastMode" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" -Name "EnthusiastMode" -Type DWord -Value 1
     Write-Host "Sto nascondendo Task View button..."
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton" -Type DWord -Value 0
     Write-Host "Sto nascondendo People icon..."
     If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People")) {
         New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" | Out-Null
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" -Name "PeopleBand" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" -Name "PeopleBand" -Type DWord -Value 0
     Write-Host "Hide icone tray..."
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "AbilitaAutoTray" -Type DWord -Value 1
-    Write-Host "Sto abilitando NumLock after startup..."
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "enableAutoTray" -Type DWord -Value 1
+    Write-Host "Sto enablendo NumLock after startup..."
     If (!(Test-Path "HKU:")) {
         New-PSDrive -Name HKU -PSProvider Registry -Root HKEY_USERS | Out-Null
     }
-    Set-ItemProforty -Path "HKU:\.DEFAULT\Control Panel\Keyboard" -Name "InitialKeyboardIndicators" -Type DWord -Value 2147483650
-    Add-Type -AssemblyName System.Windows.forms
-    If (!([System.Windows.forms.Control]::IsKeyLocked('NumLock'))) {
+    Set-ItemProperty -Path "HKU:\.DEFAULT\Control Panel\Keyboard" -Name "InitialKeyboardIndicators" -Type DWord -Value 2147483650
+    Add-Type -AssemblyName System.Windows.perms
+    If (!([System.Windows.perms.Control]::IsKeyLocked('NumLock'))) {
         $wsh = New-Object -ComObject WScript.Shell
         $wsh.SendKeys('{NUMLOCK}')
     }
 
     Write-Host "Changing default Explorer view to This PC..."
     $ResultText.text += "`r`n" +"Quality of Life Tweaks"
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "LaunchTo" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "LaunchTo" -Type DWord -Value 1
 
     Write-Host "Sto nascondendo 3D Objects icon from This PC..."
     Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" -Recurse -ErrorAction SilentlyContinue
 
 	# Network Tweaks
-	Set-ItemProforty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" -Name "IRPStackSize" -Type DWord -Value 20
+	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" -Name "IRPStackSize" -Type DWord -Value 20
 
 	# SVCHost Tweak
-	Set-ItemProforty -Path "HKLM:\SYSTEM\CurrentControlSet\Control" -Name "SvcHostSplitThresholdInKB" -Type DWord -Value 4194304
+	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control" -Name "SvcHostSplitThresholdInKB" -Type DWord -Value 4194304
 
     #Write-Host "Sto installando Windows Media Player..."
-	#Abilita-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart -WarningAction SilentlyContinue | Out-Null
+	#enable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart -WarningAction SilentlyContinue | Out-Null
 
-    Write-Host "Disabilita News and Interests"
-    $ResultText.text += "`r`n" +"Sto disabilitando Extra Junk"
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds" -Name "AbilitaFeeds" -Type DWord -Value 0
+    Write-Host "Disenable News and Interests"
+    $ResultText.text += "`r`n" +"Sto disenablendo Extra Junk"
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds" -Name "enableFeeds" -Type DWord -Value 0
     # Remove "News and Interest" from taskbar
-    Set-ItemProforty -Path  "HKCU:\Software\Microsoft\Windows\CurrentVersion\Feeds" -Name "ShellFeedsTaskbarViewMode" -Type DWord -Value 2
+    Set-ItemProperty -Path  "HKCU:\Software\Microsoft\Windows\CurrentVersion\Feeds" -Name "ShellFeedsTaskbarViewMode" -Type DWord -Value 2
 
     # remove "Meet Now" button from taskbar
 
     If (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer")) {
-        New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -force | Out-Null
+        New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -perce | Out-Null
     }
 
-Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "HideSCAMeetNow" -Type DWord -Value 1
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "HideSCAMeetNow" -Type DWord -Value 1
 
     Write-Host "Sto rimuovendo AutoLogger file and restricting directory..."
     $autoLoggerDir = "$env:PROGRAMDATA\Microsoft\Diagnosis\ETLLogs\AutoLogger"
@@ -981,81 +981,81 @@ Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies
     }
     icacls $autoLoggerDir /deny SYSTEM:`(OI`)`(CI`)F | Out-Null
 
-    Write-Host "Stopping and Sto disabilitando Diagnostics Tracking Service..."
+    Write-Host "Stopping and Sto disenablendo Diagnostics Tracking Service..."
     Stop-Service "DiagTrack"
-    Set-Service "DiagTrack" -StartupType Disabilitata
+    Set-Service "DiagTrack" -StartupType Disenableta
 
     Write-Host "Sto mostrando known file extensions..."
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Type DWord -Value 0
 
     Write-Host "Essential Tweaks completata"
-    $ResultText.text = "`r`n" + "Essential Tweaks Done" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" + "Essential Tweaks Done" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $dualboottime.Add_Click({
 Write-Host "Sto impostando BIOS time to UTC..."
-    Set-ItemProforty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" -Name "RealTimeIsUniversal" -Type DWord -Value 1
-    $ResultText.text = "`r`n" + "Time set to UTC for consistent time in Dual Boot Systems" + "`r`n" + "`r`n" + "Sono pronto for il prossimo compito"
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInpermation" -Name "RealTimeIsUniversal" -Type DWord -Value 1
+    $ResultText.text = "`r`n" + "Time set to UTC per consistent time in Dual Boot Systems" + "`r`n" + "`r`n" + "Sono pronto per il prossimo compito"
 })
 
 $essentialundo.Add_Click({
     Write-Host "Sto creando Restore Point incase something bad happens"
     $ResultText.text = "`r`n" +"`r`n" + "Sto creando Restore Point and Reverting ... Aspetta qualche secondo"
-    Abilita-ComputerRestore -Drive "C:\"
+    enable-ComputerRestore -Drive "C:\"
     Checkpoint-Computer -Description "RestorePoint1" -RestorePointType "MODIFY_"
 
-    Write-Host "Sto abilitando Telemetry..."
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 1
-    Write-Host "Sto abilitando Wi-Fi Sense"
-    Set-ItemProforty -Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting" -Name "Value" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots" -Name "Value" -Type DWord -Value 1
-    Write-Host "Sto abilitando Application suggestions..."
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "ContentDeliveryAllowed" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "OemPreInstalledAppsAbilitata" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsAbilitata" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsEverAbilitata" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SilentInstalledAppsAbilitata" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338387Abilitata" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338388Abilitata" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338389Abilitata" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-353698Abilitata" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SystemPaneSuggestionsAbilitata" -Type DWord -Value 1
+    Write-Host "Sto enablendo Telemetry..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 1
+    Write-Host "Sto enablendo Wi-Fi Sense"
+    Set-ItemProperty -Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting" -Name "Value" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots" -Name "Value" -Type DWord -Value 1
+    Write-Host "Sto enablendo Application suggestions..."
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "ContentDeliveryAllowed" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "OemPreInstalledAppsenableta" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsenableta" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "PreInstalledAppsEverenableta" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SilentInstalledAppsenableta" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338387enableta" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338388enableta" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338389enableta" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-353698enableta" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SystemPaneSuggestionsenableta" -Type DWord -Value 1
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent")) {
         Remove-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Recurse -ErrorAction SilentlyContinue
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisabilitaWindowsConsumerFeatures" -Type DWord -Value 0
-    Write-Host "Sto abilitando Activity History..."
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "AbilitaActivityFeed" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "PublishUserActivities" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "UploadUserActivities" -Type DWord -Value 1
-    Write-Host "Abilita Location Tracking..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisenableWindowsConsumerFeatures" -Type DWord -Value 0
+    Write-Host "Sto enablendo Activity History..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "enableActivityFeed" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "PublishUserActivities" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "UploadUserActivities" -Type DWord -Value 1
+    Write-Host "enable Location Tracking..."
     If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location")) {
         Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -Recurse -ErrorAction SilentlyContinue
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -Name "Value" -Type String -Value "Allow"
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" -Name "SensorformissionState" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\lfsvc\Service\Configuration" -Name "Status" -Type DWord -Value 1
-    Write-Host "Sto abilitando automatic Maps updates..."
-    Set-ItemProforty -Path "HKLM:\SYSTEM\Maps" -Name "AutoUpdateAbilitata" -Type DWord -Value 1
-    Write-Host "Sto abilitando Feedback..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -Name "Value" -Type String -Value "Allow"
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" -Name "SensorpermissionState" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\lfsvc\Service\Configuration" -Name "Status" -Type DWord -Value 1
+    Write-Host "Sto enablendo automatic Maps updates..."
+    Set-ItemProperty -Path "HKLM:\SYSTEM\Maps" -Name "AutoUpdateenableta" -Type DWord -Value 1
+    Write-Host "Sto enablendo Feedback..."
     If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules")) {
         Remove-Item -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Recurse -ErrorAction SilentlyContinue
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Name "NumberOfSIUFInforiod" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "DoNotShowFeedbackNotifications" -Type DWord -Value 0
-    Write-Host "Sto abilitando Tailored Exforiences..."
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Name "NumberOfSIUFInperiod" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "DoNotShowFeedbackNotifications" -Type DWord -Value 0
+    Write-Host "Sto enablendo Tailored Experiences..."
     If (!(Test-Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent")) {
         Remove-Item -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Recurse -ErrorAction SilentlyContinue
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisabilitaTailoredExforiencesWithDiagnosticData" -Type DWord -Value 0
-    Write-Host "Sto disabilitando Advertising ID..."
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisenableTailoredExperiencesWithDiagnosticData" -Type DWord -Value 0
+    Write-Host "Sto disenablendo Advertising ID..."
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo")) {
         Remove-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" -Recurse -ErrorAction SilentlyContinue
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" -Name "DisabilitataByGroupPolicy" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" -Name "DisenabletaByGroupPolicy" -Type DWord -Value 0
     Write-Host "Allow Error reporting..."
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting" -Name "Disabilitata" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting" -Name "Disenableta" -Type DWord -Value 0
     Write-Host "Allowing Diagnostics Tracking Service..."
     Stop-Service "DiagTrack" -WarningAction SilentlyContinue
     Set-Service "DiagTrack" -StartupType Manual
@@ -1067,65 +1067,65 @@ $essentialundo.Add_Click({
     Set-Service "HomeGroupListener" -StartupType Manual
     Stop-Service "HomeGroupProvider" -WarningAction SilentlyContinue
     Set-Service "HomeGroupProvider" -StartupType Manual
-    Write-Host "Sto abilitando Storage Sense..."
+    Write-Host "Sto enablendo Storage Sense..."
     New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" | Out-Null
-    Write-Host "Allowing Suforfetch service..."
+    Write-Host "Allowing Superfetch service..."
     Stop-Service "SysMain" -WarningAction SilentlyContinue
     Set-Service "SysMain" -StartupType Manual
     Write-Host "Sto impostando BIOS time to Local Time instead of UTC..."
-    Set-ItemProforty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" -Name "RealTimeIsUniversal" -Type DWord -Value 0
-    Write-Host "Sto abilitando Hibernation..."
-    Set-ItemProforty -Path "HKLM:\System\CurrentControlSet\Control\Session Manager\Power" -Name "HibernteAbilitata" -Type Dword -Value 1
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenu" -Name "ShowHibernateOption" -Type Dword -Value 1
-	Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\forsonalization" -Name "NoLockScreen" -ErrorAction SilentlyContinue
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInpermation" -Name "RealTimeIsUniversal" -Type DWord -Value 0
+    Write-Host "Sto enablendo Hibernation..."
+    Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Session Manager\Power" -Name "Hibernteenableta" -Type Dword -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenu" -Name "ShowHibernateOption" -Type Dword -Value 1
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\personalization" -Name "NoLockScreen" -ErrorAction SilentlyContinue
 
-    Write-Host "Sto nascondendo file oforations details..."
-    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OforationStatusManager")) {
-        Remove-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OforationStatusManager" -Recurse -ErrorAction SilentlyContinue
+    Write-Host "Sto nascondendo file operations details..."
+    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager")) {
+        Remove-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" -Recurse -ErrorAction SilentlyContinue
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OforationStatusManager" -Name "EnthusiastMode" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" -Name "EnthusiastMode" -Type DWord -Value 0
     Write-Host "Sto mostrando Task View button..."
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" -Name "PeopleBand" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" -Name "PeopleBand" -Type DWord -Value 1
 
     Write-Host "Changing default Explorer view to Quick Access..."
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "LaunchTo" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "LaunchTo" -Type DWord -Value 0
 
     Write-Host "Unrestricting AutoLogger directory"
     $autoLoggerDir = "$env:PROGRAMDATA\Microsoft\Diagnosis\ETLLogs\AutoLogger"
     icacls $autoLoggerDir /grant:r SYSTEM:`(OI`)`(CI`)F | Out-Null
 
-    Write-Host "Sto abilitando and starting Diagnostics Tracking Service"
+    Write-Host "Sto enablendo and starting Diagnostics Tracking Service"
     Set-Service "DiagTrack" -StartupType Automatic
     Start-Service "DiagTrack"
 
     Write-Host "Sto nascondendo known file extensions"
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Type DWord -Value 1
 
     Write-Host "Reset Local Group Policies to Stock Defaults"
     # cmd /c secedit /configure /cfg %windir%\inf\defltbase.inf /db defltbase.sdb /verbose
     cmd /c RD /S /Q "%WinDir%\System32\GroupPolicyUsers"
     cmd /c RD /S /Q "%WinDir%\System32\GroupPolicy"
-    cmd /c gpupdate /force
+    cmd /c gpupdate /perce
     # Considered using Invoke-GPUpdate but requires module most people won't have installed
 
     Write-Host "Essential Undo completata"
-    $ResultText.text = "`r`n" +"`r`n" + "Essential Undo completata - Sono pronto for il prossimo compito"
+    $ResultText.text = "`r`n" +"`r`n" + "Essential Undo completata - Sono pronto per il prossimo compito"
 })
 
 $windowssearch.Add_Click({
-    Write-Host "Sto disabilitando Bing Search in Start Menu..."
-    $ResultText.text = "`r`n" +"`r`n" + "Sto disabilitando Search, Cortana, Start menu search... Aspetta qualche secondo"
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchAbilitata" -Type DWord -Value 0
+    Write-Host "Sto disenablendo Bing Search in Start Menu..."
+    $ResultText.text = "`r`n" +"`r`n" + "Sto disenablendo Search, Cortana, Start menu search... Aspetta qualche secondo"
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchenableta" -Type DWord -Value 0
     <#
-    Write-Host "Sto disabilitando Cortana"
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "CortanaConsent" -Type DWord -Value 0
+    Write-Host "Sto disenablendo Cortana"
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "CortanaConsent" -Type DWord -Value 0
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search")) {
-        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -force | Out-Null
+        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -perce | Out-Null
     }
     #>
     Write-Host "Sto nascondendo Search Box / Button..."
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode" -Type DWord -Value 0
 
     Write-Host "Sto rimuovendo Start Menu Tiles"
 
@@ -1170,15 +1170,15 @@ $windowssearch.Add_Click({
 
     $regAliases = @("HKLM", "HKCU")
 
-    #Assign il start layout and force it to apply with "LockedStartLayout" at both il machine and user level
-    foreach ($regAlias in $regAliases){
+    #Assign il start layout and perce it to apply with "LockedStartLayout" at both il machine and user level
+    pereach ($regAlias in $regAliases){
         $basePath = $regAlias + ":\SOFTWARE\Policies\Microsoft\Windows"
         $keyPath = $basePath + "\Explorer"
         IF(!(Test-Path -Path $keyPath)) {
             New-Item -Path $basePath -Name "Explorer"
         }
-        Set-ItemProforty -Path $keyPath -Name "LockedStartLayout" -Value 1
-        Set-ItemProforty -Path $keyPath -Name "StartLayoutFile" -Value $layoutFile
+        Set-ItemProperty -Path $keyPath -Name "LockedStartLayout" -Value 1
+        Set-ItemProperty -Path $keyPath -Name "StartLayoutFile" -Value $layoutFile
     }
 
     #Restart Explorer, open il start menu (necessary to load il new layout), and give it a few seconds to process
@@ -1187,11 +1187,11 @@ $windowssearch.Add_Click({
     $wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{ESCAPE}')
     Start-Sleep -s 5
 
-    #Abilita il ability to pin items again by Sto disabilitando "LockedStartLayout"
-    foreach ($regAlias in $regAliases){
+    #enable il ability to pin items again by Sto disenablendo "LockedStartLayout"
+    pereach ($regAlias in $regAliases){
         $basePath = $regAlias + ":\SOFTWARE\Policies\Microsoft\Windows"
         $keyPath = $basePath + "\Explorer"
-        Set-ItemProforty -Path $keyPath -Name "LockedStartLayout" -Value 0
+        Set-ItemProperty -Path $keyPath -Name "LockedStartLayout" -Value 0
 
     Write-Host "Search and Start Menu Tweaks Complete"
     $ResultText.text = "`r`n" +"`r`n" + "Search and Start Menu Tweaks Complete"
@@ -1199,36 +1199,36 @@ $windowssearch.Add_Click({
 })
 
 $backgroundapps.Add_Click({
-    Write-Host "Sto disabilitando Background application access..."
-    Get-ChildItem -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" -Exclude "Microsoft.Windows.Cortana*" | forEach {
-        Set-ItemProforty -Path $_.PsPath -Name "Disabilitata" -Type DWord -Value 1
-        Set-ItemProforty -Path $_.PsPath -Name "DisabilitataByUser" -Type DWord -Value 1
+    Write-Host "Sto disenablendo Background application access..."
+    Get-ChildItem -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" -Exclude "Microsoft.Windows.Cortana*" | perEach {
+        Set-ItemProperty -Path $_.PsPath -Name "Disenableta" -Type DWord -Value 1
+        Set-ItemProperty -Path $_.PsPath -Name "DisenabletaByUser" -Type DWord -Value 1
     }
-    Write-Host "Disabilitata Background application access"
-    $ResultText.text = "`r`n" +"`r`n" + "Disabilitata Background application access"
+    Write-Host "Disenableta Background application access"
+    $ResultText.text = "`r`n" +"`r`n" + "Disenableta Background application access"
 })
 
 $cortana.Add_Click({
-    Write-Host "Sto disabilitando Cortana..."
-    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\forsonalization\")) {
-        New-Item -Path "HKCU:\SOFTWARE\Microsoft\forsonalization\" -force | Out-Null
+    Write-Host "Sto disenablendo Cortana..."
+    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\personalization\")) {
+        New-Item -Path "HKCU:\SOFTWARE\Microsoft\personalization\" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\forsonalization\" -Name "AcceptedPrivacyPolicy" -Type DWord -Value 0
-    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization")) {
-        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization" -force | Out-Null
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\personalization\" -Name "AcceptedPrivacyPolicy" -Type DWord -Value 0
+    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization")) {
+        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization" -Name "RestrictImplicitTextCollection" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization" -Name "RestrictImplicitInkCollection" -Type DWord -Value 1
-    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization\TrainedDataStore")) {
-        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization\TrainedDataStore" -force | Out-Null
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization" -Name "RestrictImplicitTextCollection" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization" -Name "RestrictImplicitInkCollection" -Type DWord -Value 1
+    If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization\TrainedDataStore")) {
+        New-Item -Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization\TrainedDataStore" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization\TrainedDataStore" -Name "HarvestContacts" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization\TrainedDataStore" -Name "HarvestContacts" -Type DWord -Value 0
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search")) {
-        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -force | Out-Null
+        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -Type DWord -Value 0
-    Write-Host "Disabilitata Cortana"
-    $ResultText.text = "`r`n" +"`r`n" + "Disabilitata Cortana"
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -Type DWord -Value 0
+    Write-Host "Disenableta Cortana"
+    $ResultText.text = "`r`n" +"`r`n" + "Disenableta Cortana"
 })
 
 $Bloatware = @(
@@ -1286,11 +1286,11 @@ $Bloatware = @(
     "Microsoft.MicrosoftOfficeHub"
 
     #Sponsored Windows 10 AppX Apps
-    #Add sponsored/featured apps to remove in il "*AppName*" format
+    #Add sponsored/featured apps to remove in il "*AppName*" permat
     "*EclipseManager*"
     "*ActiproSoftwareLLC*"
     "*AdobeSystemsIncorporated.AdobePhotoshopExpress*"
-    "*Duolingo-LearnLanguagesforFree*"
+    "*Duolingo-LearnLanguagesperFree*"
     "*PandoraMediaInc*"
     "*CandyCrush*"
     "*BubbleWitch3Saga*"
@@ -1306,13 +1306,13 @@ $Bloatware = @(
     "*ACGMediaPlayer*"
     "*Netflix*"
     "*OneCalendar*"
-    "*LinkedInforWindows*"
+    "*LinkedInperWindows*"
     "*HiddenCityMysteryofShadows*"
     "*Hulu*"
     "*HiddenCity*"
     "*AdobePhotoshopExpress*"
 
-    #Optional: Typically not removed but you can if you need to for some reason
+    #Optional: Typically not removed but you can if you need to per some reason
     "*Microsoft.Advertising.Xaml*"
     #"*Microsoft.MSPaint*"
     #"*Microsoft.MicrosoftStickyNotes*"
@@ -1324,7 +1324,7 @@ $Bloatware = @(
 $removebloat.Add_Click({
     Write-Host "Sto rimuovendo Bloatware"
 
-    foreach ($Bloat in $Bloatware) {
+    pereach ($Bloat in $Bloatware) {
         Get-AppxPackage -Name $Bloat| Remove-AppxPackage
         Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $Bloat | Remove-AppxProvisionedPackage -Online
         Write-Host "Trying to remove $Bloat."
@@ -1338,10 +1338,10 @@ $removebloat.Add_Click({
 $reinstallbloat.Add_Click({
     Write-Host "Sto reinstallando Bloatware"
 
-    foreach ($app in $Bloatware) {
+    pereach ($app in $Bloatware) {
         Write-Output "Trying to add $app"
         $ResultText.text = "`r`n" +"`r`n" + "Trying to add $app"
-        Add-AppxPackage -DisabilitaDevelopmentMode -Register "$($(Get-AppxPackage -AllUsers $app).InstallLocation)\AppXManifest.xml"
+        Add-AppxPackage -DisenableDevelopmentMode -Register "$($(Get-AppxPackage -AllUsers $app).InstallLocation)\AppXManifest.xml"
     }
 
     Write-Host "Finished Sto reinstallando Bloatware Apps"
@@ -1349,93 +1349,93 @@ $reinstallbloat.Add_Click({
 })
 
 $defaultwindowsupdate.Add_Click({
-    Write-Host "Sto abilitando driver offering through Windows Update..."
-    Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Device Metadata" -Name "PreventDeviceMetadataFromNetwork" -ErrorAction SilentlyContinue
-    Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DontPromptforWindowsUpdate" -ErrorAction SilentlyContinue
-    Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DontSearchWindowsUpdate" -ErrorAction SilentlyContinue
-    Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DriverUpdateWizardWuSearchAbilitata" -ErrorAction SilentlyContinue
-    Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -Name "ExcludeWUDriversInQualityUpdate" -ErrorAction SilentlyContinue
-    Write-Host "Sto abilitando Windows Update automatic restart..."
-    Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "NoAutoRebootWithLoggedOnUsers" -ErrorAction SilentlyContinue
-    Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "AUPowerManagement" -ErrorAction SilentlyContinue
-    Write-Host "Abilitata driver offering through Windows Update"
+    Write-Host "Sto enablendo driver offering through Windows Update..."
+    Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Device Metadata" -Name "PreventDeviceMetadataFromNetwork" -ErrorAction SilentlyContinue
+    Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DontPromptperWindowsUpdate" -ErrorAction SilentlyContinue
+    Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DontSearchWindowsUpdate" -ErrorAction SilentlyContinue
+    Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DriverUpdateWizardWuSearchenableta" -ErrorAction SilentlyContinue
+    Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -Name "ExcludeWUDriversInQualityUpdate" -ErrorAction SilentlyContinue
+    Write-Host "Sto enablendo Windows Update automatic restart..."
+    Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "NoAutoRebootWithLoggedOnUsers" -ErrorAction SilentlyContinue
+    Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "AUPowerManagement" -ErrorAction SilentlyContinue
+    Write-Host "enableta driver offering through Windows Update"
     $ResultText.text = "`r`n" +"`r`n" + "Set Windows Updates to Stock "
 })
 
 $securitywindowsupdate.Add_Click({
-    Write-Host "Sto disabilitando driver offering through Windows Update..."
+    Write-Host "Sto disenablendo driver offering through Windows Update..."
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Device Metadata")) {
-        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Device Metadata" -force | Out-Null
+        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Device Metadata" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Device Metadata" -Name "PreventDeviceMetadataFromNetwork" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Device Metadata" -Name "PreventDeviceMetadataFromNetwork" -Type DWord -Value 1
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching")) {
-        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -force | Out-Null
+        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DontPromptforWindowsUpdate" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DontSearchWindowsUpdate" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DriverUpdateWizardWuSearchAbilitata" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DontPromptperWindowsUpdate" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DontSearchWindowsUpdate" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" -Name "DriverUpdateWizardWuSearchenableta" -Type DWord -Value 0
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate")) {
         New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -Name "ExcludeWUDriversInQualityUpdate" -Type DWord -Value 1
-    Write-Host "Sto disabilitando Windows Update automatic restart..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -Name "ExcludeWUDriversInQualityUpdate" -Type DWord -Value 1
+    Write-Host "Sto disenablendo Windows Update automatic restart..."
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU")) {
-        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -force | Out-Null
+        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -perce | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "NoAutoRebootWithLoggedOnUsers" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "AUPowerManagement" -Type DWord -Value 0
-    Write-Host "Disabilitata driver offering through Windows Update"
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "NoAutoRebootWithLoggedOnUsers" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "AUPowerManagement" -Type DWord -Value 0
+    Write-Host "Disenableta driver offering through Windows Update"
     $ResultText.text = "`r`n" +"`r`n" + "Set Windows Update to Sane "
 })
 
 $actioncenter.Add_Click({
-    Write-Host "Sto disabilitando Action Center..."
+    Write-Host "Sto disenablendo Action Center..."
     If (!(Test-Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer")) {
         New-Item -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer" | Out-Null
     }
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "DisabilitaNotificationCenter" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" -Name "ToastAbilitata" -Type DWord -Value 0
-    Write-Host "Disabilitata Action Center"
-    $ResultText.text = "`r`n" +"`r`n" + "Disabilitata Action Center"
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "DisenableNotificationCenter" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" -Name "Toastenableta" -Type DWord -Value 0
+    Write-Host "Disenableta Action Center"
+    $ResultText.text = "`r`n" +"`r`n" + "Disenableta Action Center"
 })
 
-$forformancefx.Add_Click({
-    Write-Host "Adjusting visual effects for forformance..."
-    Set-ItemProforty -Path "HKCU:\Control Panel\Desktop" -Name "DragFullWindows" -Type String -Value 0
-    Set-ItemProforty -Path "HKCU:\Control Panel\Desktop" -Name "MenuShowDelay" -Type String -Value 200
-    Set-ItemProforty -Path "HKCU:\Control Panel\Desktop" -Name "UserPreferencesMask" -Type Binary -Value ([byte[]](144,18,3,128,16,0,0,0))
-    Set-ItemProforty -Path "HKCU:\Control Panel\Desktop\WindowMetrics" -Name "MinAnimate" -Type String -Value 0
-    Set-ItemProforty -Path "HKCU:\Control Panel\Keyboard" -Name "KeyboardDelay" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ListviewAlphaSelect" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ListviewShadow" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarAnimations" -Type DWord -Value 0
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSto impostando" -Type DWord -Value 3
-    Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\DWM" -Name "AbilitaAeroPeek" -Type DWord -Value 0
-    Write-Host "Impostata visual effects for forformance"
-    $ResultText.text = "`r`n" +"`r`n" + "Impostata VFX for forformance"
+$forpermancefx.Add_Click({
+    Write-Host "Adjusting visual effects per perpermance..."
+    Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "DragFullWindows" -Type String -Value 0
+    Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "MenuShowDelay" -Type String -Value 200
+    Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "UserPreferencesMask" -Type Binary -Value ([byte[]](144,18,3,128,16,0,0,0))
+    Set-ItemProperty -Path "HKCU:\Control Panel\Desktop\WindowMetrics" -Name "MinAnimate" -Type String -Value 0
+    Set-ItemProperty -Path "HKCU:\Control Panel\Keyboard" -Name "KeyboardDelay" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ListviewAlphaSelect" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ListviewShadow" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarAnimations" -Type DWord -Value 0
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSto impostando" -Type DWord -Value 3
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\DWM" -Name "enableAeroPeek" -Type DWord -Value 0
+    Write-Host "Impostata visual effects per perpermance"
+    $ResultText.text = "`r`n" +"`r`n" + "Impostata VFX per perpermance"
 })
 
 $appearancefx.Add_Click({
-	Write-Output "Adjusting visual effects for appearance..."
-	Set-ItemProforty -Path "HKCU:\Control Panel\Desktop" -Name "DragFullWindows" -Type String -Value 1
-	Set-ItemProforty -Path "HKCU:\Control Panel\Desktop" -Name "MenuShowDelay" -Type String -Value 400
-	Set-ItemProforty -Path "HKCU:\Control Panel\Desktop" -Name "UserPreferencesMask" -Type Binary -Value ([byte[]](158,30,7,128,18,0,0,0))
-	Set-ItemProforty -Path "HKCU:\Control Panel\Desktop\WindowMetrics" -Name "MinAnimate" -Type String -Value 1
-	Set-ItemProforty -Path "HKCU:\Control Panel\Keyboard" -Name "KeyboardDelay" -Type DWord -Value 1
-	Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ListviewAlphaSelect" -Type DWord -Value 1
-	Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ListviewShadow" -Type DWord -Value 1
-	Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarAnimations" -Type DWord -Value 1
-	Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSto impostando" -Type DWord -Value 3
-	Set-ItemProforty -Path "HKCU:\Software\Microsoft\Windows\DWM" -Name "AbilitaAeroPeek" -Type DWord -Value 1
-    $ResultText.text = "`r`n" +"`r`n" + "Visual effects are set for appearance (Defaults)"
+	Write-Output "Adjusting visual effects per appearance..."
+	Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "DragFullWindows" -Type String -Value 1
+	Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "MenuShowDelay" -Type String -Value 400
+	Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "UserPreferencesMask" -Type Binary -Value ([byte[]](158,30,7,128,18,0,0,0))
+	Set-ItemProperty -Path "HKCU:\Control Panel\Desktop\WindowMetrics" -Name "MinAnimate" -Type String -Value 1
+	Set-ItemProperty -Path "HKCU:\Control Panel\Keyboard" -Name "KeyboardDelay" -Type DWord -Value 1
+	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ListviewAlphaSelect" -Type DWord -Value 1
+	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ListviewShadow" -Type DWord -Value 1
+	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarAnimations" -Type DWord -Value 1
+	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSto impostando" -Type DWord -Value 3
+	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\DWM" -Name "enableAeroPeek" -Type DWord -Value 1
+    $ResultText.text = "`r`n" +"`r`n" + "Visual effects are set per appearance (Defaults)"
 })
 
 $onedrive.Add_Click({
-    Write-Host "Sto disabilitando OneDrive..."
+    Write-Host "Sto disenablendo OneDrive..."
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive")) {
         New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" | Out-Null
     }
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisabilitaFileSyncNGSC" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisenableFileSyncNGSC" -Type DWord -Value 1
     Write-Host "UnSto installando OneDrive..."
     Stop-Process -Name "OneDrive" -ErrorAction SilentlyContinue
     Start-Sleep -s 2
@@ -1447,68 +1447,68 @@ $onedrive.Add_Click({
     Start-Sleep -s 2
     Stop-Process -Name "explorer" -ErrorAction SilentlyContinue
     Start-Sleep -s 2
-    Remove-Item -Path "$env:USERPROFILE\OneDrive" -force -Recurse -ErrorAction SilentlyContinue
-    Remove-Item -Path "$env:LOCALAPPDATA\Microsoft\OneDrive" -force -Recurse -ErrorAction SilentlyContinue
-    Remove-Item -Path "$env:PROGRAMDATA\Microsoft OneDrive" -force -Recurse -ErrorAction SilentlyContinue
-    Remove-Item -Path "$env:SYSTEMDRIVE\OneDriveTemp" -force -Recurse -ErrorAction SilentlyContinue
+    Remove-Item -Path "$env:USERPROFILE\OneDrive" -perce -Recurse -ErrorAction SilentlyContinue
+    Remove-Item -Path "$env:LOCALAPPDATA\Microsoft\OneDrive" -perce -Recurse -ErrorAction SilentlyContinue
+    Remove-Item -Path "$env:PROGRAMDATA\Microsoft OneDrive" -perce -Recurse -ErrorAction SilentlyContinue
+    Remove-Item -Path "$env:SYSTEMDRIVE\OneDriveTemp" -perce -Recurse -ErrorAction SilentlyContinue
     If (!(Test-Path "HKCR:")) {
         New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT | Out-Null
     }
     Remove-Item -Path "HKCR:\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" -Recurse -ErrorAction SilentlyContinue
     Remove-Item -Path "HKCR:\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" -Recurse -ErrorAction SilentlyContinue
-    Write-Host "Disabilitata OneDrive"
-    $ResultText.text = "`r`n" +"`r`n" + "Deleted and Disabilitata OneDrive"
+    Write-Host "Disenableta OneDrive"
+    $ResultText.text = "`r`n" +"`r`n" + "Deleted and Disenableta OneDrive"
 })
 
 $scuramode.Add_Click({
-    Write-Host "Sto abilitando modalità scura"
-    Set-ItemProforty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ilmes\forsonalize -Name AppsUsechiarailme -Value 0
-    Write-Host "Abilitata modalità scura"
-    $ResultText.text = "`r`n" +"`r`n" + "Abilitata modalità scura"
+    Write-Host "Sto enablendo modalità scura"
+    Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ilmes\personalize -Name AppsUsechiarailme -Value 0
+    Write-Host "enableta modalità scura"
+    $ResultText.text = "`r`n" +"`r`n" + "enableta modalità scura"
 })
 
 $chiaramode.Add_Click({
     Write-Host "Sto tornando indietro a modalità chiara"
-    Remove-ItemProforty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ilmes\forsonalize -Name AppsUsechiarailme
+    Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ilmes\personalize -Name AppsUsechiarailme
     Write-Host "Switched Back to modalità chiara"
-    $ResultText.text = "`r`n" +"`r`n" + "Abilitata modalità chiara"
+    $ResultText.text = "`r`n" +"`r`n" + "enableta modalità chiara"
 })
 
 $EActionCenter.Add_Click({
-    Write-Host "Sto abilitando Action Center..."
-	Remove-ItemProforty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "DisabilitaNotificationCenter" -ErrorAction SilentlyContinue
-	Remove-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" -Name "ToastAbilitata" -ErrorAction SilentlyContinue
+    Write-Host "Sto enablendo Action Center..."
+	Remove-ItemProperty -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "DisenableNotificationCenter" -ErrorAction SilentlyContinue
+	Remove-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" -Name "Toastenableta" -ErrorAction SilentlyContinue
 	Write-Host "Done - Reverted to Stock "
-    $ResultText.text = "`r`n" +"`r`n" + "Abilitata Action Center"
+    $ResultText.text = "`r`n" +"`r`n" + "enableta Action Center"
 })
 
 $ECortana.Add_Click({
-    Write-Host "Sto abilitando Cortana..."
-	Remove-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\forsonalization\" -Name "AcceptedPrivacyPolicy" -ErrorAction SilentlyContinue
-	If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization\TrainedDataStore")) {
-		New-Item -Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization\TrainedDataStore" -force | Out-Null
+    Write-Host "Sto enablendo Cortana..."
+	Remove-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\personalization\" -Name "AcceptedPrivacyPolicy" -ErrorAction SilentlyContinue
+	If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization\TrainedDataStore")) {
+		New-Item -Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization\TrainedDataStore" -perce | Out-Null
 	}
-	Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization" -Name "RestrictImplicitTextCollection" -Type DWord -Value 0
-	Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization" -Name "RestrictImplicitInkCollection" -Type DWord -Value 0
-	Remove-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Inputforsonalization\TrainedDataStore" -Name "HarvestContacts" -ErrorAction SilentlyContinue
-	Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -ErrorAction SilentlyContinue
+	Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization" -Name "RestrictImplicitTextCollection" -Type DWord -Value 0
+	Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization" -Name "RestrictImplicitInkCollection" -Type DWord -Value 0
+	Remove-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Inputpersonalization\TrainedDataStore" -Name "HarvestContacts" -ErrorAction SilentlyContinue
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -ErrorAction SilentlyContinue
 	Write-Host "Sto ripristinando Windows Search..."
-	Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchAbilitata" -Type DWord -Value "1"
-	Remove-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "CortanaConsent" -ErrorAction SilentlyContinue
-	Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "DisabilitaWebSearch" -ErrorAction SilentlyContinue
+	Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchenableta" -Type DWord -Value "1"
+	Remove-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "CortanaConsent" -ErrorAction SilentlyContinue
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "DisenableWebSearch" -ErrorAction SilentlyContinue
 	Write-Host "Restore and Starting Windows Search Service..."
     Set-Service "WSearch" -StartupType Automatic
     Start-Service "WSearch" -WarningAction SilentlyContinue
     Write-Host "Restore Windows Search Icon..."
-	Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode" -Type DWord -Value 1
+	Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode" -Type DWord -Value 1
 	Write-Host "Done - Reverted to Stock "
-    $ResultText.text = "`r`n" +"`r`n" + "Abilitata Cortana and Restored Search"
+    $ResultText.text = "`r`n" +"`r`n" + "enableta Cortana and Restored Search"
 })
 
 $HTrayIcons.Add_Click({
 
 	Write-Host "Sto nascondendo icone tray..."
-	Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "AbilitaAutoTray" -Type DWord -Value 1
+	Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "enableAutoTray" -Type DWord -Value 1
 	Write-Host "Done - Hid icone tray"
     $ResultText.text = "`r`n" +"`r`n" + "icone tray are now factory defaults"
 })
@@ -1517,86 +1517,86 @@ $HTrayIcons.Add_Click({
 $STrayIcons.Add_Click({
 
 	Write-Host "Sto mostrando icone tray..."
-	Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "AbilitaAutoTray" -Type DWord -Value 0
+	Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "enableAutoTray" -Type DWord -Value 0
 	Write-Host "Done - Now Sto mostrando all icone tray"
     $ResultText.text = "`r`n" +"`r`n" + "icone tray now set to show all"
 })
 
 $EClipboardHistory.Add_Click({
 	Write-Host "Sto ripristinando Clipboard History..."
-	Remove-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Clipboard" -Name "AbilitaClipboardHistory" -ErrorAction SilentlyContinue
-    Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "AllowClipboardHistory" -ErrorAction SilentlyContinue
+	Remove-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Clipboard" -Name "enableClipboardHistory" -ErrorAction SilentlyContinue
+    Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "AllowClipboardHistory" -ErrorAction SilentlyContinue
 	Write-Host "Done - Reverted to Stock "
-    $ResultText.text = "`r`n" +"`r`n" + "Abilitata Clipboard History"
+    $ResultText.text = "`r`n" +"`r`n" + "enableta Clipboard History"
 })
 
 $ELocation.Add_Click({
-	Write-Host "Sto abilitando Location Provider..."
-	Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors" -Name "DisabilitaWindowsLocationProvider" -ErrorAction SilentlyContinue
-	Write-Host "Sto abilitando Location Scripting..."
-    Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors" -Name "DisabilitaLocationScripting" -ErrorAction SilentlyContinue
-	Write-Host "Sto abilitando Location..."
-	Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors" -Name "DisabilitaLocation" -ErrorAction SilentlyContinue
-	Remove-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" -Name "SensorformissionState" -ErrorAction SilentlyContinue
-    Set-ItemProforty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" -Name "Value" -Type String -Value "Allow"
+	Write-Host "Sto enablendo Location Provider..."
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors" -Name "DisenableWindowsLocationProvider" -ErrorAction SilentlyContinue
+	Write-Host "Sto enablendo Location Scripting..."
+    Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors" -Name "DisenableLocationScripting" -ErrorAction SilentlyContinue
+	Write-Host "Sto enablendo Location..."
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors" -Name "DisenableLocation" -ErrorAction SilentlyContinue
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" -Name "SensorpermissionState" -ErrorAction SilentlyContinue
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" -Name "Value" -Type String -Value "Allow"
 	Write-Host "Allow access to Location..."
-	Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -Name "Value" -Type String -Value "Allow"
-	Set-ItemProforty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\lfsvc\Service\Configuration" -Name "Status" -Type DWord -Value "1"
-	Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsAccessLocation" -ErrorAction SilentlyContinue
-	Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsAccessLocation_UserInControlOfilseApps" -ErrorAction SilentlyContinue
-	Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsAccessLocation_forceAllowilseApps" -ErrorAction SilentlyContinue
-	Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsAccessLocation_forceDenyilseApps" -ErrorAction SilentlyContinue
+	Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" -Name "Value" -Type String -Value "Allow"
+	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\lfsvc\Service\Configuration" -Name "Status" -Type DWord -Value "1"
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsAccessLocation" -ErrorAction SilentlyContinue
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsAccessLocation_UserInControlOfilseApps" -ErrorAction SilentlyContinue
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsAccessLocation_perceAllowilseApps" -ErrorAction SilentlyContinue
+	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsAccessLocation_perceDenyilseApps" -ErrorAction SilentlyContinue
 	Write-Host "Done - Reverted to Stock "
     $ResultText.text = "`r`n" +"`r`n" + "Location Tracking now on... Reboot to check."
 })
 
 $RBackgroundApps.Add_Click({
 	Write-Host "Allowing Background Apps..."
-	Get-ChildItem -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" -Exclude "Microsoft.Windows.Cortana*" | forEach {
-		Remove-ItemProforty -Path $_.PsPath -Name "Disabilitata" -ErrorAction SilentlyContinue
-		Remove-ItemProforty -Path $_.PsPath -Name "DisabilitataByUser" -ErrorAction SilentlyContinue
+	Get-ChildItem -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" -Exclude "Microsoft.Windows.Cortana*" | perEach {
+		Remove-ItemProperty -Path $_.PsPath -Name "Disenableta" -ErrorAction SilentlyContinue
+		Remove-ItemProperty -Path $_.PsPath -Name "DisenabletaByUser" -ErrorAction SilentlyContinue
 	}
 	Write-Host "Done - Reverted to Stock "
-    $ResultText.text = "`r`n" +"`r`n" + "Abilitata Background Apps"
+    $ResultText.text = "`r`n" +"`r`n" + "enableta Background Apps"
 })
 
 $EHibernation.Add_Click({
-    Write-Host "Sto abilitando Hibernation"
-    Set-ItemProforty -Path "HKLM:\System\CurrentControlSet\Control\Session Manager\Power" -Name "HibernteAbilitata" -Type Dword -Value 1
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenu" -Name "ShowHibernateOption" -Type Dword -Value 1
+    Write-Host "Sto enablendo Hibernation"
+    Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Session Manager\Power" -Name "Hibernteenableta" -Type Dword -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenu" -Name "ShowHibernateOption" -Type Dword -Value 1
     Write-Host "Done - Reverted to Stock "
-    $ResultText.text = "`r`n" +"`r`n" + "Abilitata Hibernation"
+    $ResultText.text = "`r`n" +"`r`n" + "enableta Hibernation"
 })
 
 $InstallOneDrive.Add_Click({
     Write-Host "Sto installando Onedrive. Aspetta qualche secondo..."
-    Remove-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisabilitaFileSyncNGSC" -ErrorAction SilentlyContinue
+    Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisenableFileSyncNGSC" -ErrorAction SilentlyContinue
     %systemroot%\SysWOW64\OneDriveSetup.exe
     $ResultText.text = "`r`n" +"`r`n" + "Finished Sto reinstallando OneDrive"
 })
 
-$DisabilitaNumLock.Add_Click({
-    Write-Host "Disabilita NumLock after startup..."
-    Set-ItemProforty -Path "HKU:\.DEFAULT\Control Panel\Keyboard" -Name "InitialKeyboardIndicators" -Type DWord -Value 0
-    Add-Type -AssemblyName System.Windows.forms
-    If (([System.Windows.forms.Control]::IsKeyLocked('NumLock'))) {
+$DisenableNumLock.Add_Click({
+    Write-Host "Disenable NumLock after startup..."
+    Set-ItemProperty -Path "HKU:\.DEFAULT\Control Panel\Keyboard" -Name "InitialKeyboardIndicators" -Type DWord -Value 0
+    Add-Type -AssemblyName System.Windows.perms
+    If (([System.Windows.perms.Control]::IsKeyLocked('NumLock'))) {
         $wsh = New-Object -ComObject WScript.Shell
         $wsh.SendKeys('{NUMLOCK}')
     }
-    $ResultText.text = "`r`n" +"`r`n" + "NUMLOCK Disabilitata"
+    $ResultText.text = "`r`n" +"`r`n" + "NUMLOCK Disenableta"
 })
 
 $yourphonefix.Add_Click({
     Write-Host "Sto reinstallando Your Phone App"
-    Add-AppxPackage -DisabilitaDevelopmentMode -Register "$($(Get-AppXPackage -AllUsers "Microsoft.YourPhone").InstallLocation)\AppXManifest.xml"
-    Write-Host "Abilita needed data collection for Your Phone..."
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "AbilitaMmx" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "AbilitaCdp" -Type DWord -Value 1
-    Set-ItemProforty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Messaging" -Name "AllowMessageSync" -Type DWord -Value 1
+    Add-AppxPackage -DisenableDevelopmentMode -Register "$($(Get-AppXPackage -AllUsers "Microsoft.YourPhone").InstallLocation)\AppXManifest.xml"
+    Write-Host "enable needed data collection per Your Phone..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "enableMmx" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "enableCdp" -Type DWord -Value 1
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Messaging" -Name "AllowMessageSync" -Type DWord -Value 1
     Write-Host "Allowing Background Apps..."
-	Get-ChildItem -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" -Exclude "Microsoft.Windows.Cortana*" | forEach {
-		Remove-ItemProforty -Path $_.PsPath -Name "Disabilitata" -ErrorAction SilentlyContinue
-		Remove-ItemProforty -Path $_.PsPath -Name "DisabilitataByUser" -ErrorAction SilentlyContinue
+	Get-ChildItem -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" -Exclude "Microsoft.Windows.Cortana*" | perEach {
+		Remove-ItemProperty -Path $_.PsPath -Name "Disenableta" -ErrorAction SilentlyContinue
+		Remove-ItemProperty -Path $_.PsPath -Name "DisenabletaByUser" -ErrorAction SilentlyContinue
 	}
     Write-Host "You may need to Reboot and right-click Your Phone app and select repair"
     $ResultText.text = "`r`n" +"`r`n" + "You may need to Reboot and right-click Your Phone app and select repair"
@@ -1689,7 +1689,7 @@ $windowsupdatefix.Add_Click({
     Start-Service -Name appidsvc 
     Start-Service -Name cryptsvc 
     
-    Write-Host "12) forcing discovery..." 
+    Write-Host "12) percing discovery..." 
     wuauclt /resetauthorization /detectnow 
     
     Write-Host "Process complete. Please reboot your computer."
